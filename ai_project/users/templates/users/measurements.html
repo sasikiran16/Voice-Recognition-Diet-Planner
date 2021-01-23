@@ -1,0 +1,168 @@
+{% extends template %}
+{% block content %}
+<br><br><br><br><br><br>
+
+            {%if user.is_authenticated%}
+            <form action="/update_fitness/" method="POST" id="demo">
+                {% csrf_token %}
+                <center>
+                    <tabel align="center">
+                        <input type="hidden" id="page" name="page" value="goals">
+            <tr>
+                <th width="150">
+                    <label for="name"> Your Height :</label>
+                    <input type="number" placeholder={{height}} name="Height" required><br>
+                </th>
+            </tr>
+
+            <tr>
+                <th width="150">
+                    <label for="name"> Your Weight :</label>
+                    <input type="number" placeholder={{weight}} name="Weight" required><br>
+                </th>
+            </tr>
+
+            {% if gender == 'Male'%}
+            <tr>
+                <th width="150">
+                    <label for="name"> Your Abdomen size :</label>
+                    <input type="number" placeholder={{abdomen}} name="Abdomen" required><br>
+                </th>
+            </tr>
+
+            <tr>
+                <th width="150">
+                    <label for="name"> Your Neck Size :</label>
+                    <input type="number" placeholder={{neck}} name="Neck" required><br>
+                </th>
+                <button type="button" style="width: 10%; height: 200%; font-size:15px;" class="btn btn-lg btn-info"
+                    onclick="save()">Save</button>
+
+                <script>
+                    function save() {
+                        document.getElementById('demo').submit();
+
+
+                    }
+                </script>
+                
+
+                {% else %}
+            <tr>
+                <th width="150">
+                    <label for="name"> Your Waist Size :</label>
+                    <input type="number" placeholder={{waist}} name="Waist" required><br>
+                </th>
+            </tr>
+
+            <th width="150">
+                <label for="name"> Your Hip Size :</label>
+                <input type="number" placeholder={{hip}} name="Hip" required><br>
+            </th>
+
+            <th width="150">
+                <label for="name"> Your Neck Size :</label>
+                <input type="number" placeholder={{neck}} name="Neck" required><br>
+            </th>
+            <button type="button" style="width: 10%; height: 200%; font-size:15px;" class="btn btn-lg btn-info"
+                    onclick="save()">Save</button>
+
+                <script>
+                    function save() {
+                        document.getElementById('demo').submit();
+
+
+                    }
+                </script>
+
+            {% endif %}
+
+        </tabel>
+    </center>
+</form>
+
+            {% else %}
+            <form action="/measurements/" method="POST" id="next">
+                {% csrf_token %}
+                <center>
+                    <tabel align="center">
+            <tr>
+                <th width="150">
+                    <label for="name"> Your Height :</label>
+                    <input type="number" placeholder="Height in inches" name="Height" required><br>
+                </th>
+            </tr>
+
+            <tr>
+                <th width="150">
+                    <label for="name"> Your Weight :</label>
+                    <input type="number" placeholder="Weight in kgs" name="Weight" required><br>
+                </th>
+            </tr>
+
+            {% if gender == 'Male'%}
+            <tr>
+                <th width="150">
+                    <label for="name"> Your Abdomen size :</label>
+                    <input type="number" placeholder="Abdomen in inches" name="Abdomen" required><br>
+                </th>
+            </tr>
+
+            <tr>
+                <th width="150">
+                    <label for="name"> Your Neck Size :</label>
+                    <input type="number" placeholder="Neck in inches" name="Neck" required><br>
+                </th>
+                <div class="form-group">
+                    <button type="button" style="width: 10%; height: 200%; font-size:15px;"
+                        class="btn btn-lg btn-info" onclick="m_sub()">Next</button>
+                </div>
+
+                <script>
+                    function m_sub() {
+                        document.getElementById('next').submit();
+    
+    
+                    }
+                </script>
+
+               {% else %}
+            <tr>
+                <th width="150">
+                    <label for="name"> Your Waist Size :</label>
+                    <input type="number" placeholder="Waist in inches" name="Waist" required><br>
+                </th>
+            </tr>
+
+            <th width="150">
+                <label for="name"> Your Hip Size :</label>
+                <input type="number" placeholder="Hips in inches" name="Hip" required><br>
+            </th>
+
+            <th width="150">
+                <label for="name"> Your Neck Size :</label>
+                <input type="number" placeholder="Neck in inches" name="Neck" required><br>
+            </th>
+
+            <div class="form-group">
+                <button type="button" style="width: 10%; height: 200%; font-size:15px;"
+                    class="btn btn-lg btn-info" onclick="fem_sub()">Next</button>
+            </div>
+            <script>
+                function fem_sub() {
+                    document.getElementById('next').submit();
+
+
+                }
+            </script>
+            
+        </tabel>
+    </center>
+</form>
+            {% endif %}
+            {% endif %}
+
+
+
+
+{% endblock content %}

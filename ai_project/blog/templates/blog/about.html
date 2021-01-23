@@ -1,0 +1,587 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://themetechmount.com/html/nutricare/index.html -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="keywords" content="HTML5 Template">
+  <meta name="description" content="Nutricare – Nutrition Health &amp; Diet Consultancy HTML Template">
+  <meta name="author" content="https://www.themetechmount.com/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Fitness Buddy – Nutrition Health &amp; Diet Consultancy</title>
+
+  <!-- favicon icon -->
+  <link rel="shortcut icon" href="http://themetechmount.com/html/nutricare/images/favicon.png">
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" type="text/css" href="{% static 'users/bootstrap.min.css' %}">
+
+  <!-- animate -->
+  <link rel="stylesheet" type="text/css" href="{% static 'users/animate.css' %}">
+
+  <!-- owl-carousel -->
+  <link rel="stylesheet" type="text/css" href="{% static 'users/owl.carousel.css' %}">
+
+  <!-- fontawesome -->
+  <link rel="stylesheet" type="text/css" href="{% static 'users/font-awesome.css' %}">
+
+  <!-- themify -->
+  <link rel="stylesheet" type="text/css" href="{% static 'users/themify-icons.css' %}">
+
+  <!-- flaticon -->
+  <link rel="stylesheet" type="text/css" href="{% static 'users/flaticon.css' %}">
+
+  <!-- REVOLUTION LAYERS STYLES -->
+
+  <link rel="stylesheet" type="text/css" href="{% static 'users/layers.css' %}">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'users/settings.css' %}">
+
+  <!-- prettyphoto -->
+  <link rel="stylesheet" type="text/css" href="{% static 'users/prettyPhoto.css' %}">
+
+  <!-- shortcodes -->
+  <link rel="stylesheet" type="text/css" href="{% static 'users/shortcodes.css' %}">
+
+  <!-- main -->
+  <link rel="stylesheet" type="text/css" href="{% static 'users/main.css' %}">
+
+  <!-- responsive -->
+  <link rel="stylesheet" type="text/css" href="{% static 'users/responsive.css' %}">
+
+</head>
+
+
+<body>
+<!--page start-->
+<div class="page">
+
+    <!-- preloader start -->
+    <div id="preloader" style="display: none;">
+      <div id="status" style="display: none;">&nbsp;</div>
+    </div>
+    <!-- preloader end -->
+
+
+    <!--header start-->
+    <header id="masthead" class="header ttm-header-style-stackcenter">
+      <!-- ttm-topbar-wrapper -->
+
+      <!-- ttm-header-wrap -->
+      <div class="ttm-header-wrap">
+        <div>
+
+          <ul class="nav navbar-nav navbar-right" style="display:inline; position:relative; right:40px">
+            <li><a href="{% url 'intermediate' %}" style="color: rgb(5, 138, 148);"><span
+                  class="glyphicon glyphicon-user"></span> Register</a>
+            </li>
+            <li><a href="{% url 'login' %}" style="color: rgb(5, 138, 148);"><span
+                  class="glyphicon glyphicon-log-in"></span> Login</a>
+            </li>
+          </ul>
+
+        </div>
+        <div class="container" style="align-items: center; text-align:center;">
+          <div class="row" style="align-items: center;">
+            <!-- <img src="{% static 'users/logo_venky.png' %}" style="height:20%; width:20%; position:relative; top:100px; left:100px">  -->
+            <div class="col-lg-6" style="height: ;">
+              <img src="{% static 'users/logo_venky.png' %}"
+                style="height:35%; width:35%; position:relative; top:17px; right:40px">
+            </div>
+            <div class="col-lg-12" style="height: 20px;">
+              <!-- site-branding -->
+              <h1
+                style="word-spacing: 20px; font-weight: 550; font-size: 70px; color: rgb(164, 207, 9);  left:50px; position:relative; bottom:50px; font-family:;">
+                Fitness Buddy</h1>
+
+
+            </div>
+
+
+          </div>
+
+
+          <div class="row">
+
+            <div class="col-lg-12">
+              <!-- ttm-stickable-header-w -->
+
+              <div id="ttm-stickable-header-w" class="ttm-stickable-header-w ttm-bgcolor-white clearfix">
+                <div id="site-header-menu" class="site-header-menu">
+                  <div class="site-header-menu-inner ttm-stickable-header visible-title fixed-header">
+
+                    <div class="container">
+                      <!--site-navigation -->
+                      <div id="site-navigation" class="site-navigation">
+
+                        <ul class="nav nav-tabs nav-justified">
+                          <li class="nav-item"><a href="{% url 'blog-home' %}">Home</a>
+                          </li>
+                          <li class="nav-item"><a href="{% url 'blog-about' %}" style="background-color; color:rgb(144, 182, 7); font-weight:500">About
+                              Us</a></li>
+                          <li class="nav-item"><a href="{% url 'blog-services' %}">Services</a>
+                          </li>
+                          <li class="nav-item"><a href="{% url 'blog-test' %}">Testimonials</a>
+                          </li>
+                          <li class="nav-item"><a href="{% url 'blog-blog' %}">Blog</a>
+                          </li>
+
+                        </ul>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- site-navigation end-->
+          </div>
+        </div>
+      </div>
+  </div>
+  </div><!-- ttm-stickable-header-w end-->
+  </div>
+  </div>
+  </div>
+  <!--ttm-header-wrap end -->
+  </header>
+  <!--header end-->
+ <!--about-section-->
+ <section class="ttm-row about-section ttm-bgcolor-white clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <div class="mt-40 res-991-mt-0">
+                    <div class="pr-70 res-991-plr-0">
+                        <!-- section title -->
+                        <div class="section-title clearfix mb-10">
+                            <div class="title-header">
+                                <h5>about nutrition</h5>
+                                <h2 class="title">Welcome To Health <br> Care Nutrition</h2>
+                            </div>
+                            <div class="title-desc">
+                                <p>We have been the most trusted “Health care Nutrition” manual for 25 years,
+                                    and We are proud of our rich history of providing evidence based nutrition
+                                    resources from Registered Dietitian Nutritionists. We emerged to maintain
+                                    our reputation in a society which took a long time to be what today we are!
+                                    NGO for ruler people.</p>
+                            </div>
+                        </div><!-- section title end -->
+
+                        <a class="ttm-btn ttm-btn-size-sm ttm-icon-btn-right ttm-btn-color-skincolor btn-inline mb-30"
+                            href="http://themetechmount.com/html/nutricare/index.html#">More About <i
+                                class="ti ti-angle-double-right"></i></a>
+                    </div>
+                    <div class="separator">
+                        <div class="sep-line mt_5"></div>
+                    </div>
+                    <!-- row-->
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4">
+                            <!--featured-icon-box-->
+                            <div class="featured-icon-box style2 left-icon">
+                                <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
+                                    <i class="ti ti-timer"></i>
+                                </div>
+                                <div class="featured-content">
+                                    <div class="featured-title">
+                                        <h5>Ontime at Services</h5>
+                                    </div>
+                                </div>
+                            </div><!-- featured-icon-box end-->
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <!--featured-icon-box-->
+                            <div class="featured-icon-box style2 left-icon">
+                                <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
+                                    <i class="ti ti-wand"></i>
+                                </div>
+                                <div class="featured-content">
+                                    <div class="featured-title">
+                                        <h5>24/7 Help Services</h5>
+                                    </div>
+                                </div>
+                            </div><!-- featured-icon-box end-->
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <!--featured-icon-box-->
+                            <div class="featured-icon-box style2 left-icon">
+                                <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
+                                    <i class="ti ti-medall"></i>
+                                </div>
+                                <div class="featured-content">
+                                    <div class="featured-title">
+                                        <h5>Verified Professionals</h5>
+                                    </div>
+                                </div>
+                            </div><!-- featured-icon-box end-->
+                        </div>
+                    </div><!-- row end-->
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-12">
+                <!-- ttm_single_image-wrapper -->
+                <div class="ttm_single_image-wrapper res-991-mt-50">
+                    <div class="text-right ml-30 res-991-ml-0 ">
+                        <img class="img-fluid" src="{% static 'users/single-img-one.png' %}" alt="">
+                    </div>
+                </div><!-- ttm_single_image-wrapper end -->
+                <!-- ttm-fid -->
+                <div class="ttm-fid inside ttm-fid-without-icon ttm-highlight-fid ttm-textcolor-white">
+                    <h4 class="ttm-fid-inner mb-0">
+                        <span data-appear-animation="animateDigits" data-from="0" data-to="15" data-interval="2"
+                            data-before="" data-before-style="sup" data-after="" data-after-style="sub"
+                            class="numinate completed">15</span><span class="ml-5">Years</span>
+                    </h4>
+                    <div class="ttm-fid-contents text-left ttm-textcolor-white">
+                        <h3 class="ttm-fid-title">Experience</h3>
+                    </div>
+                </div><!-- ttm-fid end-->
+            </div>
+        </div><!-- row end -->
+    </div>
+</section>
+<!--about-section end-->
+
+<!--our-story-section-->
+<section class="ttm-row our-story-section clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <div class="mt-75 res-991-mt-0">
+                    <div class="pr-35 res-1199-plr-0">
+                        <!-- section title -->
+                        <div class="section-title clearfix">
+                            <div class="title-header">
+                                <h5>our story</h5>
+                                <h2 class="title">We Are The Best Nutrition &amp; Health in The World.</h2>
+                            </div>
+                            <div class="title-desc">
+                                <p>The health care, nutrition is your trustworthy guide for nutritious and
+                                    wellness. We provide empowering, evidence-based content that is easy to
+                                    digest and focused on the information you can use to the help yourself. That
+                                    makes us unique.empowering, evidence-based content that is easy to digest
+                                    and focused on the information you can use to the help.</p>
+                            </div>
+                        </div><!-- section title end -->
+                    </div>
+                    <div class="separator">
+                        <div class="sep-line mt_5"></div>
+                    </div>
+                    <!-- row-->
+                    <div class="row ttm-clients-colum-sep ttm-fid-row-wrapper">
+                        <div class="col-md-6 col-sm-6">
+                            <!--ttm-fid-->
+                            <div class="ttm-fid inside ttm-fid-view-lefticon mb-0">
+                                <div class="ttm-fid-left">
+                                    <div class="ttm-fid-icon-wrapper ttm-textcolor-skincolor">
+                                        <i class="flaticon flaticon-nutritionist-1"></i>
+                                    </div>
+                                    <h4 class="ttm-fid-inner">
+                                        <span data-appear-animation="animateDigits" data-from="0" data-to="500"
+                                            data-interval="20" data-before="" data-before-style="sup"
+                                            data-after="" data-after-style="sub"
+                                            class="numinate completed">500</span>
+                                    </h4>
+                                </div>
+                                <div class="ttm-fid-contents text-left">
+                                    <h3 class="ttm-fid-title">Happy Customers</h3>
+                                </div>
+                            </div><!-- ttm-fid end-->
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <!--ttm-fid-->
+                            <div class="ttm-fid inside ttm-fid-view-lefticon mb-0">
+                                <div class="ttm-fid-left">
+                                    <div class="ttm-fid-icon-wrapper ttm-textcolor-skincolor">
+                                        <i class="flaticon flaticon-care"></i>
+                                    </div>
+                                    <h4 class="ttm-fid-inner">
+                                        <span data-appear-animation="animateDigits" data-from="0" data-to="820"
+                                            data-interval="20" data-before="" data-before-style="sup"
+                                            data-after="" data-after-style="sub"
+                                            class="numinate completed">820</span>
+                                    </h4>
+                                </div>
+                                <div class="ttm-fid-contents text-left">
+                                    <h3 class="ttm-fid-title">Awards &amp; Features</h3>
+                                </div>
+                            </div><!-- ttm-fid end-->
+                        </div>
+                    </div><!-- row end-->
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-12">
+                <div class="ml-65 res-991-ml-0 position-relative">
+                    <!-- video-icon -->
+                    <a class="ttm-video-icon ttm-center-video-icon ttm_prettyphoto text-center"
+                        href="https://youtu.be/7e90gBu4pas">
+                        <div class="ttm-icon ttm-icon_element-fill ttm-icon_element-color-white ttm-icon_element-background-skincolor ttm-icon_element-size-md ttm-icon_element-style-rounded mt_38 ttm_prettyphoto"
+                            href="https://youtu.be/7e90gBu4pas">
+                            <i class="fa fa-play"></i>
+                        </div>
+                    </a><!-- video-icon end-->
+                    <!-- ttm_single_image-wrapper -->
+                    <div class="ttm_single_image-wrapper mb-10 res-991-mt-30">
+                        <div class="text-right">
+                            <img class="img-fluid box-shadow1" src="{% static 'users/single-img-two.jpg' %}"
+                                alt="">
+                        </div>
+                    </div><!-- ttm_single_image-wrapper end -->
+                    <!--ttm-fid-->
+                    <div class="ttm-fid inside ttm-fid-view-lefticon ttm-highlight-fid-style2 mb-0">
+                        <div class="ttm-fid-left">
+                            <div class="ttm-fid-icon-wrapper ttm-textcolor-skincolor">
+                                <i class="flaticon flaticon-healthy-lifestyle-logo"></i>
+                            </div>
+                            <h4 class="ttm-fid-inner">
+                                <span data-appear-animation="animateDigits" data-from="0" data-to="300"
+                                    data-interval="20" data-before="" data-before-style="sup" data-after="+"
+                                    data-after-style="sub" class="numinate completed">300</span><span
+                                    class="ml-5">+</span>
+                            </h4>
+                        </div>
+                        <div class="ttm-fid-contents text-left">
+                            <h3 class="ttm-fid-title">Successful Customers</h3>
+                        </div>
+                    </div><!-- ttm-fid end-->
+                </div>
+            </div>
+        </div><!-- row end -->
+    </div>
+</section>
+<!--our-story-section end-->
+
+  <!--footer start-->
+  <footer class="footer widget-footer ttm-bgcolor-black clearfix">
+    <div class="first-footer">
+      <div class="container">
+        <div class="row align-center">
+          <div class="col-lg-8 col-xs-12 widget-area">
+            <div class="featured-icon-box left-icon">
+              <div class="featured-icon">
+                <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-xs">
+                  <i class="fa fa-clock-o"></i>
+                </div>
+              </div>
+              <div class="featured-content">
+                <div class="featured-title">
+                  <h5>Opening Hours:</h5>
+                  <h6>Monday: 8:00 AM - 20:00 PM &nbsp;&nbsp; | &nbsp;&nbsp; Saturday: 10:00AM -
+                    2:00PM</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-xs-12 widget-area text-right">
+            <div class="download-button">
+              <a href="http://themetechmount.com/html/nutricare/index.html#"><img
+                  src="{% static 'users/app-button-01.png' %}" alt="app-button"></a>
+              <a href="http://themetechmount.com/html/nutricare/index.html#"><img
+                  src="{% static 'users/app-button-02.png' %}" alt="app-button"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="second-footer ttm-textcolor-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 widget-area">
+            <div class="widget clearfix">
+              <div class="footer-logo">
+                <div class="row" style="align-items: center;">
+                  <!-- <img src="{% static 'users/venky_logo.jpeg' %}" style="height:20%; width:20%; position:relative; top:100px; left:100px">  -->
+                  <div class="col-lg-6" style="height: ;">
+                    <!-- <img src="{% static 'users/logo_venky.png' %}" -->
+                    <!-- style="height:35%; width:35%; position:relative; top:17px; right:40px"> -->
+                  </div>
+                  <!-- <div class="col-lg-12" style="height: 20px;"> -->
+                  <!-- site-branding -->
+                  <!-- <h1
+                      style="word-spacing: 20px; font-weight: 550; font-size: 70px; color: rgb(164, 207, 9);  left:50px; position:relative; bottom:50px; font-family:;">
+                      Fitness Buddy</h1>
+      
+      
+                  </div> -->
+
+
+                </div>
+              </div>
+              <p>We have been the most trusted Health care Nutrition for 25 years. We're proud of our rich
+                history for nutritionists services.</p>
+              <div class="separator pt-5">
+                <div class="sep-line mb-30"></div>
+              </div>
+              <ul class="widget-contact">
+                <li><a href="mailto:info@example.com" target="_blank"><i
+                      class="fa fa-envelope-o"></i>info@example.com</a></li>
+                <li><i class="fa fa-phone"></i>(+01) 123 456 7890</li>
+              </ul>
+              <div class="social-icons social-hover">
+                <ul class="list-inline">
+                  <li class="social-facebook"><a class="tooltip-top" target="_blank"
+                      href="http://themetechmount.com/html/nutricare/index.html#" data-tooltip="Facebook"><i
+                        class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                  <li class="social-twitter"><a class="tooltip-top" target="_blank"
+                      href="http://themetechmount.com/html/nutricare/index.html#" data-tooltip="Twitter"><i
+                        class="fa fa-twitter" aria-hidden="true"></i></a>
+                  </li>
+                  <li class="social-gplus"><a class=" tooltip-top" target="_blank"
+                      href="http://themetechmount.com/html/nutricare/index.html#" data-tooltip="Flickr"><i
+                        class="fa fa-flickr" aria-hidden="true"></i></a>
+                  </li>
+                  <li class="social-linkedin"><a class=" tooltip-top" target="_blank"
+                      href="http://themetechmount.com/html/nutricare/index.html" data-tooltip="LinkedIn"><i
+                        class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 widget-area">
+            <div class="widget widget_nav_menu clearfix">
+              <h3 class="widget-title">Quick Links</h3>
+              <ul id="menu-footer-services">
+                <li><a href="http://themetechmount.com/html/nutricare/index.html#">Personalized
+                    Nutrition</a></li>
+                <li><a href="http://themetechmount.com/html/nutricare/index.html#">Wellness Programs</a>
+                </li>
+                <li><a href="http://themetechmount.com/html/nutricare/index.html#">Individual
+                    Coaching</a></li>
+                <li><a href="http://themetechmount.com/html/nutricare/index.html#">Sports Nutritionist
+                    Diet</a></li>
+                <li><a href="http://themetechmount.com/html/nutricare/index.html#">Child Nutritionist
+                    Plan</a></li>
+                <li><a href="http://themetechmount.com/html/nutricare/index.html#">Make Appointments</a>
+                </li>
+                <li><a href="http://themetechmount.com/html/nutricare/index.html#">Our Pricing Plan</a>
+                </li>
+                <li><a href="http://themetechmount.com/html/nutricare/index.html#">Online Nutrition
+                    Services</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 widget-area">
+            <div class="widget widget_text clearfix">
+              <h3 class="widget-title">Recent Posts</h3>
+              <ul class="widget-post ttm-recent-post-list">
+                <li>
+                  <a href="http://themetechmount.com/html/nutricare/single-blog.html"><img
+                      src="{% static 'users/post-1.jpg' %}" alt="post-img"></a>
+                  <span class="post-date"><i class="fa fa-calendar"></i>20 April,2018</span>
+                  <a href="http://themetechmount.com/html/nutricare/single-blog.html" class="clearfix">How Much Do Eat
+                    You Really Need Day?</a>
+                </li>
+                <li>
+                  <a href="http://themetechmount.com/html/nutricare/single-blog.html"><img
+                      src="{% static 'users/post-2.jpg' %}" alt="post-img"></a>
+                  <span class="post-date"><i class="fa fa-calendar"></i>01 August, 2018</span>
+                  <a href="http://themetechmount.com/html/nutricare/single-blog.html" class="clearfix">7 Simple &amp;
+                    Healthy Gluten Free Cookie</a>
+                </li>
+                <li>
+                  <a href="http://themetechmount.com/html/nutricare/single-blog.html"><img
+                      src="{% static 'users/post-3.jpg' %}" alt="post-img"></a>
+                  <span class="post-date"><i class="fa fa-calendar"></i>13 March, 2018</span>
+                  <a href="http://themetechmount.com/html/nutricare/single-blog.html" class="clearfix">Tips For Staying
+                    Healthy On Vacations</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 widget-area">
+            <div class="widget clearfix">
+              <div class="ttm-newsletter-box">
+                <h3 class="widget-title">Newsletter</h3>
+                <p>Sign up to get exclusive offers from our favorite brands and to be well up in the
+                  news.</p>
+                <form class="mc4wp-form mc4wp-form-24" method="post" data-id="24" data-name="Newsletter Form">
+                  <div class="mc4wp-form-fields">
+                    <div class="mailchimp-inputbox">
+                      <input type="email" name="EMAIL" placeholder="Your email address.." required="">
+                      <input type="submit" value="Subscribe">
+                    </div>
+                  </div>
+                  <div class="mc4wp-response"></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-footer-text ttm-textcolor-white">
+      <div class="container">
+        <div class="row copyright">
+          <div class="col-md-8 ttm-footer2-left">
+            <span>Copyright © 2020&nbsp;<a href="http://themetechmount.com/html/nutricare/index.html#">Fitness
+                Buddy</a>. All rights
+              reserved.</span>
+          </div>
+          <div class="col-md-4 ttm-footer2-right">
+            <ul id="menu-footer-menu" class="footer-nav-menu">
+              <li><a href="http://themetechmount.com/html/nutricare/index.html#">Privacy Policy</a></li>
+              <li><a href="http://themetechmount.com/html/nutricare/index.html#">Contact</a></li>
+              <li><a href="http://themetechmount.com/html/nutricare/index.html#">Supplier</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--footer end-->
+
+  <!--back-to-top start-->
+  <a id="totop" href="http://themetechmount.com/html/nutricare/index.html#top" class="top-visible"
+    style="display: block;">
+    <i class="fa fa-angle-up"></i>
+  </a>
+  <!--back-to-top end-->
+
+  </div><!-- page end -->
+
+  <!-- Javascript -->
+
+  <script src="{% static 'users/jquery.min.js.download' %}"></script>
+  <script src="{% static 'users/tether.min.js.download' %}"></script>
+  <script src="{% static 'users/bootstrap.min.js.download' %}"></script>
+  <script src="{% static 'users/jquery.easing.js.download' %}"></script>
+  <script src="{% static 'users/jquery-waypoints.js.download' %}"></script>
+  <script src="{% static 'users/jquery-validate.js.download' %}"></script>
+  <script src="{% static 'users/owl.carousel.js.download' %}"></script>
+  <script src="{% static 'users/jquery.prettyPhoto.js.download' %}"></script>
+  <script src="{% static 'users/numinate.min.js.download' %}"></script>
+  <script src="{% static 'users/main.js.download' %}"></script>
+
+  <!-- Revolution Slider -->
+  <script src="{% static 'users/jquery.themepunch.tools.min.js.download' %}"></script>
+  <script src="{% static 'users/jquery.themepunch.revolution.min.js.download' %}"></script>
+  <script src="{% static 'users/slider.js.download' %}"></script>
+
+  <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
+
+  <script src="{% static 'users/revolution.extension.actions.min.js.download' %}"></script>
+  <script src="{% static 'users/revolution.extension.carousel.min.js.download' %}"></script>
+  <script src="{% static 'users/revolution.extension.kenburn.min.js.download' %}"></script>
+  <script src="{% static 'users/revolution.extension.layeranimation.min.js.download' %}"></script>
+  <script src="{% static 'users/revolution.extension.migration.min.js.download' %}"></script>
+  <script src="{% static 'users/revolution.extension.navigation.min.js.download' %}"></script>
+  <script src="{% static 'users/revolution.extension.parallax.min.js.download'%}"></script>
+  <script src="{% static 'users/revolution.extension.slideanims.min.js.download' %}"></script>
+
+  <!-- Javascript end-->
+
+
+</body>
+
+</html>

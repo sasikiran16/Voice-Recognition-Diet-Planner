@@ -1,0 +1,103 @@
+{% extends "blog/base1.html" %}
+{% block content %}
+<br><br><br><br><br><br><br>
+<form action='/{{rec}}/' method="POST" id='food_info'>
+    {% csrf_token %}
+    <center>
+        <tabel align="center" <tr>
+            <tr>
+                <th width="150">
+                    <p name="food" id='food' style="" value='{{food}}'>{{food}} </p>
+                </th>
+            </tr>
+
+
+
+            <tr>
+                <th width="150">
+                    <label for="name">Amount: </label>
+                    <input type="number" step="0.01" min="0" name="amount" id="amount"> {{unit}}
+                </th>
+            </tr>
+
+
+
+
+            <div>
+                <tr>
+                    <th width="150">
+                        Calories : <p id='cals' value={{cals}}>{{cals}} </p>
+                    </th>
+                </tr>
+
+                <tr>
+                    <th width="150">
+                        Carbs : <p id='carbs' value={{carbs}}>{{carbs}}</p>
+                    </th>
+                </tr>
+
+                <tr>
+                    <th width="150">
+                        Protein : <p id='protein' value={{protein}}>{{protein}}</p>
+                        <!-- <input type="number" placeholder="Weight" name="Weight" required><br> -->
+                    </th>
+                </tr>
+
+                <tr>
+                    <th width="150">
+                        Fats :<p id='fats' value={{fats}}>{{fats}}</p>
+                        <!-- <input type="number" placeholder="Weight" name="Weight" required><br> -->
+                    </th>
+                </tr>
+
+            </div>
+
+
+
+            <script>
+
+                document.getElementById("amount").defaultValue = {{ amount }};
+
+                amount.oninput = function () {
+                    document.getElementById('cals').innerHTML = Math.round({{ cals }} * amount.value / {{ amount }});
+                document.getElementById('carbs').innerHTML = Math.round({{ carbs }} * amount.value / {{ amount }});
+                document.getElementById('protein').innerHTML = Math.round({{ protein }} * amount.value / {{ amount }});
+                document.getElementById('fats').innerHTML = Math.round({{ fats }} * amount.value / {{ amount }});
+                }
+
+
+            </script>
+
+            <div class="form-group">
+                <input type='hidden' name='success' value='true'>
+                <input type='hidden' name='status' value='add'>
+
+                <button type="button"  style="width: 10%; height: 200%; font-size:15px;" class="btn btn-lg btn-info" onclick="get_values()">Add to {{rec}}</button>
+            </div>
+            <script>
+                function get_values() {
+                document.getElementById('cals').value = Math.round({{ cals }} * amount.value / {{ amount }});
+                document.getElementById('carbs').value = Math.round({{ carbs }} * amount.value / {{ amount }});
+                document.getElementById('protein').value = Math.round({{ protein }} * amount.value / {{ amount }});
+                document.getElementById('fats').value = Math.round({{ fats }} * amount.value / {{ amount }});
+                document.getElementById('cal').value = document.getElementById('cals').value;
+                document.getElementById('carb').value = document.getElementById('carbs').value;
+                document.getElementById('pro').value = document.getElementById('protein').value;
+                document.getElementById('fat').value = document.getElementById('fats').value;
+                document.getElementById('food_info').submit();
+                }
+
+            </script>
+
+            <!-- <input type='hidden' name='amount' value={{amount}} id='amount'> -->
+            <input type='hidden' name='cal' value='' id='cal'>
+            <input type='hidden' name='carb' value='' id='carb'>
+            <input type='hidden' name='pro' value='' id='pro'>
+            <input type='hidden' name='fat' value='' id='fat'>
+            <input type='hidden' name='unit' value={{unit}} id='unit'>
+
+        </tabel>
+    </center>
+</form>
+
+{% endblock content %}

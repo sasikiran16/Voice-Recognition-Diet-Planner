@@ -1,0 +1,63 @@
+{% extends 'blog/base1.html' %}
+{% block content %}
+{% load static %}<br><br><br><br><br><br>
+<!-- {{weights}} -->
+<body>
+    <input type="hidden" id="title" value={{title | safe}}>
+    <input type="hidden" id="ylab" value={{ylab | safe}}>
+<div class="chart-container" style="position: absolute ; height:75vh; width:98vw; background-color:rgb(255, 255, 255)"> 
+<canvas id="myChart" width="3" series="series" ></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script>
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var ti = document.getElementById('title').value;
+  var ylab = document.getElementById('ylab').value;
+  var chart = new Chart(ctx, {
+      // The type of chart we want to create
+      type: 'line',
+  
+      // The data for our dataset
+      data: {
+          labels: {{months|safe}},
+          datasets: [{  
+              label: 'Line graph',
+            //   type: 'bar'
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                // 'rgba(54, 162, 235, 0.2)',
+                                // 'rgba(255, 206, 86, 0.2)',
+                                // 'rgba(75, 192, 192, 0.2)',
+                                // 'rgba(153, 102, 255, 0.2)',
+                                // 'rgba(255, 159, 64, 0.2)',
+                                // 'rgba(255, 99, 132, 0.2)',],
+              borderColor: 'pink',
+              fill: false,
+              // borderColor: 'rgb(255, 99, 132)',
+              data: {{weights}}
+              // data: [0, 10, 5, 2, 20, 30, 45]
+          }], 
+    //   },{
+    //     label: 'Bar graph',
+    //       data:{{freq}},
+    //       type: 'bar'
+          
+    //   }],
+      
+      },
+  
+      // Configuration options go here
+      options: {responsive: true, title:{
+              display: true,
+              text: ti
+      }, scales:{xAxes:[{scaleLabel:
+                    {display: true, labelString: "Dates"}}],
+                    yAxes:[{scaleLabel:
+                    {display: true, labelString: ylab}}]}
+      }
+      }
+      );
+  
+
+</script>
+</div>
+</body>
+{% endblock content %}

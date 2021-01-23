@@ -1,0 +1,166 @@
+{% extends template %}
+{% block content %}
+<br><br><br><br><br><br>
+
+{% if user.is_authenticated %}
+<form action="/update_fitness/" method="POST" id="demo">
+    {% csrf_token %}
+    <center>
+        <tabel align="center" <tr>
+            <input type="hidden" id="page" name="page" value="preference">
+            <tr>
+                <th width="150">
+                    <label for="name"> Fitness Goals :</label>
+                    <input type="hidden" id="goals" name="goals" value="">
+                    <select name="goalies" id="goalies" onchange="goal(value);">
+                        <option value="none" selected disabled hidden> {{goals}} </option>
+                        <option value="Lose Weight">Lose Weight</option>
+                        <option value="Gain Weight">Gain Weight</option>
+                        <option value="Maintain Weight">Maintain Weight</option>
+                    </select>
+                </th>
+            </tr>
+            <script>
+                function goal($j) {
+
+                    document.getElementById('goals').value = $j;
+
+                }
+            </script>
+
+            <tr>
+                <th width="150">
+                    <label for="name"> Activity Level :</label>
+                    <input type="hidden" id="activity" name="activity" value="">
+                    <select name="act" id="act" onchange="active(value);">
+                        <option value="none" selected disabled hidden> {{activity}} </option>
+                        <option value="Sedentary">Sedentary</option>
+                        <option value="Moderately Active">Moderately Active</option>
+                        <option value="Highly Active">Highly Active</option>
+                    </select>
+                </th>
+            </tr>
+            <script>
+                function active($j) {
+
+                    document.getElementById('activity').value = $j;
+
+                }
+            </script>
+
+            <tr>
+                <th width="150">
+                    <label for="name">Goal Weight(in Kgs) :</label>
+                    <input type="number" placeholder={{goalweight}} name="goal_weight" value={{goalweight}}
+                        required><br>
+                </th>
+            </tr>
+
+
+
+            <tr>
+                <th width="150">
+                    <label for="name"> Weekly Goal :</label>
+                    <input type="hidden" id="weekly_goal" name="weekly_goal" value="">
+                    <select name="weekly" id="weekly" onchange="week(value);">
+                        <option value="none" selected disabled hidden> {{weeklygoal}} </option>
+                        <option value="0.25">0.25 kg</option>
+                        <option value="0.50">0.50 kg</option>
+                        <option value="0.75">0.75 kg</option>
+                        <option value="1">1 kg</option>
+                    </select>
+                </th>
+            </tr>
+            <script>
+                function week($j) {
+
+                    document.getElementById('weekly_goal').value = $j;
+
+                }
+            </script>
+
+
+            <button type="button" style="width: 10%; height: 200%; font-size:15px;" class="btn btn-lg btn-info"
+                onclick="save()">Save</button>
+
+            <script>
+                function save() {
+                    document.getElementById('demo').submit();
+
+
+                }
+            </script>
+        </tabel>
+    </center>
+</form>
+
+{%else%}
+<form action="/goals/" method="POST" id="next">
+    {% csrf_token %}
+    <center>
+        <tabel align="center">
+            <tr>
+                <th width="150">
+                    <label for="name"> Fitness Goals :</label>
+                    <select name="goals" id="next">
+                        <option value="Lose Weight">Lose Weight</option>
+                        <option value="Gain Weight">Gain Weight</option>
+                        <option value="Maintain Weight">Maintain Weight</option>
+                    </select>
+                </th>
+            </tr>
+
+            <tr>
+                <th width="150">
+                    <label for="name"> Activity Level :</label>
+                    <select name="activity" id="activity">
+                        <option value="Sedentary">Sedentary</option>
+                        <option value="Moderately Active">Moderately Active</option>
+                        <option value="Highly Active">Highly Active</option>
+                    </select>
+                </th>
+            </tr>
+
+
+            <tr>
+                <th width="150">
+                    <label for="name">Goal Weight(in Kgs) :</label>
+                    <input type="number" placeholder="Goal Weight" name="goal_weight" required><br>
+                </th>
+            </tr>
+
+            <tr>
+                <th width="150">
+                    <label for="name">Weekly Goal :</label>
+                    <select name="weekly_goal" id="weekly_goal">
+                        <option value="0.25">0.25 kg</option>
+                        <option value="0.50">0.5 kg</option>
+                        <option value="0.75">0.75 kg</option>
+                        <option value="1">1 kg</option>
+                    </select>
+                </th>
+            </tr>
+            <div class="form-group">
+                <button type="button" style="width: 10%; height: 200%; font-size:15px;" class="btn btn-lg btn-info"
+                    onclick="sub()">Next</button>
+            </div>
+
+            <script>
+                function sub() {
+                    document.getElementById('next').submit();
+
+
+                }
+            </script>
+        </tabel>
+    </center>
+</form>
+{%endif%}
+
+
+
+
+
+
+
+{% endblock content %}

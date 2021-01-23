@@ -1,0 +1,81 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 15/04/2019 11:38
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/Flaticon.eot");
+  src: url("../fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/Flaticon.woff2") format("woff2"),
+       url("../fonts/Flaticon.woff") format("woff"),
+       url("../fonts/Flaticon.ttf") format("truetype"),
+       url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+        font-size: inherit;
+font-style: normal;
+}
+
+.flaticon-heart-rate:before { content: "\f100"; }
+.flaticon-reduce:before { content: "\f101"; }
+.flaticon-whey:before { content: "\f102"; }
+.flaticon-whey-1:before { content: "\f103"; }
+.flaticon-meal:before { content: "\f104"; }
+.flaticon-diet:before { content: "\f105"; }
+.flaticon-healthy:before { content: "\f106"; }
+.flaticon-proteins:before { content: "\f107"; }
+.flaticon-meat:before { content: "\f108"; }
+.flaticon-fruits:before { content: "\f109"; }
+.flaticon-scale:before { content: "\f10a"; }
+.flaticon-seasoning:before { content: "\f10b"; }
+.flaticon-oil:before { content: "\f10c"; }
+.flaticon-vitamins:before { content: "\f10d"; }
+.flaticon-vitamins-1:before { content: "\f10e"; }
+.flaticon-apple:before { content: "\f10f"; }
+.flaticon-scale-1:before { content: "\f110"; }
+.flaticon-watermelon:before { content: "\f111"; }
+.flaticon-peach:before { content: "\f112"; }
+.flaticon-banana:before { content: "\f113"; }
+.flaticon-star:before { content: "\f114"; }
+.flaticon-nutritionist:before { content: "\f115"; }
+.flaticon-nutritionist-1:before { content: "\f116"; }
+.flaticon-diet-1:before { content: "\f117"; }
+.flaticon-healthy-nutrition:before { content: "\f118"; }
+.flaticon-nutrition:before { content: "\f119"; }
+.flaticon-measure:before { content: "\f11a"; }
+.flaticon-meal-1:before { content: "\f11b"; }
+.flaticon-diet-2:before { content: "\f11c"; }
+.flaticon-chili:before { content: "\f11d"; }
+.flaticon-care:before { content: "\f11e"; }
+.flaticon-healthy-lifestyle-logo:before { content: "\f11f"; }
+.flaticon-care-1:before { content: "\f120"; }
+.flaticon-meditation:before { content: "\f121"; }
+.flaticon-gym:before { content: "\f122"; }
+.flaticon-diet-3:before { content: "\f123"; }
+.flaticon-supplement:before { content: "\f124"; }
+.flaticon-salad:before { content: "\f125"; }
+.flaticon-salad-1:before { content: "\f126"; }
+.flaticon-100-natural-badge:before { content: "\f127"; }
+.flaticon-board-with-list:before { content: "\f128"; }
+.flaticon-meditation-1:before { content: "\f129"; }
+.flaticon-bicycle:before { content: "\f12a"; }
+.flaticon-lemonade:before { content: "\f12b"; }
+.flaticon-apple-and-water-bottle:before { content: "\f12c"; }
+.flaticon-woman:before { content: "\f12d"; }
+.flaticon-waist:before { content: "\f12e"; }
+.flaticon-scale-2:before { content: "\f12f"; }
+.flaticon-proteins-1:before { content: "\f130"; }
+.flaticon-no-food:before { content: "\f131"; }

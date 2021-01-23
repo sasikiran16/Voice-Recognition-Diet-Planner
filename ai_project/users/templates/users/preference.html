@@ -1,0 +1,114 @@
+{% extends template %}
+{% block content %}
+<br><br><br><br><br><br>
+{% if user.is_authenticated %}
+<form action="/update_userdets/" method="POST" id="prefntype">
+    {% csrf_token %}
+    <center>
+        <tabel align="center">
+            <input type="hidden" id="page" value="demographics" name="page">
+            <tr>
+                <th width="150">
+                    <label for="name"> Food Preference: </label>
+                    <input type="hidden" id="preference" value="" name="preference">
+                    <select name="prefer" id="prefer" onchange="pref(value);">
+                        <option value="none" selected disabled hidden> {{food_preference}} </option>
+                        <option value="North Indian">North Indian</option>
+                        <option value="South Indian">South Indian</option>
+                    </select>
+                </th>
+            </tr>
+            <script>
+                function pref($i) {
+                    
+                    document.getElementById('preference').value = $i;
+
+                }
+            </script>
+
+            <tr>
+                <th width="150">
+                    <label for="name"> Food Type: </label>
+                    <input type="hidden" id="ftype" value="" name="ftype">
+                    <select name="prefer" id="prefer" onchange="food(value);">
+                        <option value="none" selected disabled hidden> {{food_type}} </option>
+                        <option value="Vegetarian">Vegetarian</option>
+                        <option value="Non Vegetarian">Non Vegetarian</option>
+                    </select>
+                </th>
+            </tr>
+            <script>
+                function food($i) {
+                    
+                    document.getElementById('ftype').value = $i;
+
+                }
+            </script>
+
+            
+            <button type="button" style="width: 10%; height: 200%; font-size:15px;" class="btn btn-lg btn-info"
+                onclick="save()">Save</button>
+
+            <script>
+                function save() {
+                    document.getElementById('prefntype').submit();
+                }
+            </script>
+
+
+        </tabel>
+    </center>
+</form>
+            {% else %}
+            <form action="/preference/" method="POST" id="next">
+                {% csrf_token %}
+                <center>
+                    <tabel align="center">
+                        <tr>
+                            <th width="150">
+                                <label for="name"> Food Preference: </label>
+                                <!-- <input type="text" placeholder="Fitness Goals" name="Fitnessgoals" required><br> -->
+                                <select name="preference" id="preference">
+                                    <option value="North Indian">North Indian</option>
+                                    <option value="South Indian">South Indian</option>
+                                </select>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <th width="150">
+                                <label for="name"> Food Type: </label>
+                                <!-- <input type="text" placeholder="Fitness Goals" name="Fitnessgoals" required><br> -->
+                                <select name="type" id="type">
+                                    <option value="Veg">Vegetarian</option>
+                                    <option value="Non Veg">Non Vegetarian</option>
+                                </select>
+                            </th>
+                        </tr>
+                        <div class="form-group">
+                            <button type="button" style="width: 10%; height: 200%; font-size:15px;"
+                                class="btn btn-lg btn-info" onclick="sub()">Next</button>
+                        </div>
+                        <script>
+                            function sub() {
+                                document.getElementById('next').submit();
+        
+        
+                            }
+                        </script>
+                        
+                    </tabel>
+                </center>
+            </form>
+
+                        {% endif %}
+
+
+
+
+            {% endblock content %}
+
+
+
+
+            

@@ -1,0 +1,96 @@
+{% extends "blog/base1.html" %}
+{% block content %}
+<br><br><br><br><br>
+
+<!-- <center> -->
+
+<div class="container" style="margin-bottom:100px;">
+    {% if output == 'Could not understand audio' %}
+
+    <form action='/record/' method='post' id="add">
+        {% csrf_token %}
+        <label style="position:relative; width:10000px; text-align:center; font-size:30px">{{name}}</label><br><br>
+            <div class="container" style="">
+                <div class="row" style="column-gap: 80px;">
+                    <div class="column">
+                        <label>Carbohydrate</label><br>
+                        <div class="progress" style="width: 300px; height:20px">
+                            <div class="progress-bar bg-info " role="progressbar" style="width:;" aria-valuenow="0"
+                                aria-valuemin="0" aria-valuemax="100">0%</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <label>Protein</label><br>
+                        <div class="progress" style="width: 300px; height:20px">
+                            <div class="progress-bar bg-success " role="progressbar" style="width:;"
+                                aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <label>Fats</label><br>
+                        <div class="progress" style="width: 300px; height:20px">
+                            <div class="progress-bar bg-danger " role="progressbar" style="width:;"
+                                aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" style="column-gap: 80px; position:absolute">
+                    <div class="progress" style="width: 1060px; height:20px">
+                        <div class="progress-bar bg-warning " role="progressbar" style="width:; " aria-valuenow="0"
+                            aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                </div>
+            </div><br><br>
+
+        <div>
+            
+            <input type='hidden' name='record' value={{rec}}>
+            <button type="button" style="width: 10%; height: 200%; font-size:15px;" class="btn btn-lg btn-info" onclick="add()" name="rec" value={{rec}}>Add Item</button>
+            <p>{{output}}</p>
+        </div>
+        <script>
+            function add() {
+                document.getElementById('add').submit();
+            }
+        </script>
+    </form>
+
+
+    {% else %}
+    <br><br>
+    <form action='/food_info/' method="post" name="foodies" id="foodies">
+        {% csrf_token %}
+
+        <div style="float: left;">
+            <p style='font-size:30px'>{{name}}</p>
+            <!-- <input type='hidden' name='keys' value={{key}}> -->
+            {% for key, val in food.items %}
+            <div class='plz_work' style="margin-bottom: 50px;">
+
+                <a href="javascript:{}" onclick="food(this)" value={{key}} name={{key}} id={{key}}
+                    para-id={{key}}>{{val}}</a>
+
+            </div>
+            {% endfor %}
+
+            <input type='hidden' value="" , name='food_index' id='food_index'>
+    </form>
+
+    <script type='text/javascript'>
+
+
+        function food(xyz) {
+
+            var plz = xyz.getAttribute('para-id');
+            document.getElementById('food_index').value = plz;
+            document.getElementById('foodies').submit();
+
+
+        }
+
+    </script>
+    {% endif %}
+</div>
+
+{% endblock content %}

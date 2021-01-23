@@ -1,0 +1,159 @@
+{% extends "blog/base1.html" %}
+{% block content %}
+{%load static%}
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    .fa {
+      font-size: 50px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .fa:hover {
+        color: darkblue;
+    }
+
+</style>
+
+<form action='/Lunch/' method="POST" id="send">
+    {% csrf_token %}
+    <input type="hidden" value="1" name="flag" id='flag'>
+    <input type="hidden" name='like' id='like' value="">
+    <input type="hidden" name='dislike' id='dislike' value="">
+</form>
+
+
+<div class="container-fluid" style="margin-bottom:100px; background:rgb(255, 255, 255); height:100%">
+    <form action='/record/' id="sub_form" method="post">
+        {% csrf_token %}<br><br><br><br><br><br>
+        <div class="container-fluid"
+    style="background:rgb(19, 22, 22); position:relative; height:60px; align-items:center; opacity:0.8">
+    <!-- <div class="tp-caption main-font tp-resizeme" style="position:relative; text-align:center"> -->
+    <b style="color:rgb(223, 205, 205); text-align:center; font-size:30px; position:relative; top:20px; left:700px">
+        LUNCH</b>
+</div>
+        <label style="position:relative; width:10000px; text-align:center; font-size:20px"></label><br><br>
+        <div class="container" style="">
+            <div class="row" style="column-gap: 80px;">
+                <div class="column">
+                    <label>Carbohydrate</label><br>
+                    <div class="progress" style="width: 300px; height:20px">
+                        <div class="progress-bar bg-info " role="progressbar" style="width:;" aria-valuenow="0"
+                            aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <p style="position: relative; left:110px; bottom:15px">{{cum.gcarb}}g/{{cum.tcarb}}g</p>
+                </div>
+                <div class="column">
+                    <label>Protein</label><br>
+                    <div class="progress" style="width: 300px; height:20px">
+                        <div class="progress-bar bg-success " role="progressbar" style="width:;" aria-valuenow="0"
+                            aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <p style="position: relative; left:100px; bottom:15px">{{cum.gpro}}g/{{cum.tpro}}g</p>
+                </div>
+                <div class="column">
+                    <label>Fats</label><br>
+                    <div class="progress" style="width: 300px; height:20px">
+                        <div class="progress-bar bg-danger " role="progressbar" style="width:;" aria-valuenow="0"
+                            aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <p style="position: relative; left:130px; bottom:15px">{{cum.gfat}}g/{{cum.tfat}}g</p>
+                </div>
+            </div>
+            <label style="position:relative; left:535px">Calories</label><br>
+            <div class="row" style="column-gap: 80px; position:absolute">
+                <div class="progress" style="width: 1060px; height:20px">
+                    <div class="progress-bar bg-warning " role="progressbar" style="width:; " aria-valuenow="0"
+                        aria-valuemin="0" aria-valuemax="100">0%</div>
+                </div>
+                <p style="position: relative; left:520px; bottom:15px">{{cum.gcal}} cals/{{cum.tcal}} cals</p>
+            </div>
+        </div><br><br>
+
+        <!-- <p>{{user_name}}</p> -->
+        <div class="wrapper" style="position:relative; text-align: center;">
+            <input type="hidden" name="record" value='Lunch'><br>
+            <button type="button" onclick="sub()" style="width: 10%; height: 200%; font-size:15px;"
+                class="btn btn-lg btn-info" name="lunch">Add Item</button>
+        </div>
+    </form><br><br>
+    <script>
+        function sub() {
+            document.getElementById('sub_form').submit();
+        }
+    </script>
+
+</div>
+
+
+
+<div class="container-fluid"
+    style="background:rgb(19, 22, 22); position:relative; height:60px; align-items:center; opacity:0.8">
+    <!-- <div class="tp-caption main-font tp-resizeme" style="position:relative; text-align:center"> -->
+    <b style="color:rgb(223, 205, 205); text-align:center; font-size:30px; position:relative; top:20px; left:580px">OUR
+        RECOMMENDATIONS</b>
+</div><br><br><br><br><br><br><br><br>
+<img src="{% static 'users/people-table-food-picnic.jpg' %}" style="opacity:; position:relative; bottom:200px; width:650px; height:500px">
+
+
+{% for i in content %}
+<p id='refer' style="font-size: 20px; font-weight:600; position:relative; left:800px; bottom:680px; color:black">{{i}}
+</p>
+<!-- <button style="display:none;" onclick="myFunction()"> -->
+<i type="button" class="fa fa-thumbs-up" id='likes' name='likes' value={{i}} para-id='{{i}}' onclick="like(this)"
+    aria-hidden="true" onclick=""
+    style="font-size: 30px; font-weight:600; position:relative; left:1200px; bottom:725px; color:rgb(182, 49, 49); size:50px"></i>
+
+<style>
+    .fa {
+        font-size: 50px;
+        cursor: pointer;
+        user-select: none;
+    }
+</style>
+<i type="button" class="fa fa-thumbs-down" id='dislikes' name='dislikes' value={{i}} para-id='{{i}}'
+    onclick="dislike(this)" aria-hidden="true"
+    style="font-size: 30px; font-weight:600; position:relative; left:900px; left:1250px; bottom:722px; color:rgb(182, 49, 49);"></i>
+<!-- </button>   -->
+<script>
+    function dislike(xyz) {
+        var plz = xyz.getAttribute('para-id');
+        document.getElementById('dislike').value = plz;
+        document.getElementById('send').submit();
+    }
+
+    function like(xyz) {
+        var plz = xyz.getAttribute('para-id');
+        document.getElementById('like').value = plz;
+        document.getElementById('send').submit();
+    }
+    function bigImg(val) {
+        document.getElementById('help').style.color = 'dark blue'
+    }
+</script>
+{% endfor %}
+
+{% if rec_food|length != 0 %}
+<div class="container-fluid"
+    style="background:rgb(19, 22, 22); position:absolute; height:60px; align-items:center; opacity:0.8; top:1300px;">
+    <!-- <div class="tp-caption main-font tp-resizeme" style="position:relative; text-align:center"> -->
+    <b style="color:rgb(223, 205, 205); text-align:center; font-size:30px; position:relative; top:20px; left:600px">
+        YOU MAY ALSO LIKE</b>
+</div><br><br><br><br>
+<div class="container" style="position:absolute;top:1365px;">
+<img src="{% static 'users/eating-out.jpg' %}"
+    style="opacity:; position:absolute; width:650px; left:750px">
+<br>
+{% for i in rec_food %}
+<p style="font-size: 20px; font-weight:600; position:absolute; color:black; left:140px;">{{i}}</p><br><br>
+{% endfor %}
+
+</div>
+{% endif %}
+</div>
+
+
+
+
+{% endblock content %}

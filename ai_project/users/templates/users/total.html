@@ -1,0 +1,56 @@
+{% extends "blog/base1.html" %}
+{% block content %}
+
+<!-- <body> -->
+    <br><br><br><br><br><br>
+    <div class="container-fluid"
+    style="background:rgb(19, 22, 22); position:relative; height:60px; align-items:center; opacity:0.8">
+    <!-- <div class="tp-caption main-font tp-resizeme" style="position:relative; text-align:center"> -->
+    <b style="color:rgb(223, 205, 205); text-align:center; font-size:30px; position:relative; top:20px; left:500px">
+        CUMULATIVE CALORIE INTAKE</b>
+</div>
+    <label style="position:relative; width:10000px; text-align:center; font-size:20px"></label><br><br>
+            <div class="container" style="">
+                <div class="row" style="column-gap: 80px;">
+                    <div class="column">
+                        <label>Carbohydrate</label><br>
+                        <div class="progress" style="width: 300px; height:20px">
+                            <div class="progress-bar bg-info " role="progressbar" style="width: {{carbs}}%;" aria-valuenow="{{carbs}}"
+                                aria-valuemin="0" aria-valuemax="100">{{carbs}}%</div>
+                        </div>
+                        <p style="position: relative; left:110px; bottom:15px">{{gcarb}}g/{{tcarb}}g</p>
+                    </div>
+                    <div class="column">
+                        <label>Protein</label><br>
+                        <div class="progress" style="width: 300px; height:20px">
+                            <div class="progress-bar bg-success " role="progressbar" style="width: {{prot}}%;"
+                                aria-valuenow="{{prot}}" aria-valuemin="0" aria-valuemax="100">{{prot}}%</div>
+                        </div>
+                        <p style="position: relative; left:100px; bottom:15px">{{gpro}}g/{{tpro}}g</p>
+                    </div>
+                    <div class="column">
+                        <label>Fats</label><br>
+                        <div class="progress" style="width: 300px; height:20px">
+                            <div class="progress-bar bg-danger " role="progressbar" style="width: {{fat}}%;"
+                                aria-valuenow="{{fat}}" aria-valuemin="0" aria-valuemax="100">{{fat}}%</div>
+                        </div>
+                        <p style="position: relative; left:130px; bottom:15px">{{gfat}}g/{{tfat}}g</p>
+                    </div>
+                </div><br>
+                <label style="position:relative; left:530px">Calories</label><br>
+                <div class="row" style="column-gap: 80px; position:absolute">
+                    <div class="progress" style="width: 1060px; height:20px">
+                        <div class="progress-bar bg-warning " role="progressbar" style="width: {{calories}}%; " aria-valuenow="{{calories}}"
+                            aria-valuemin="0" aria-valuemax="100">{{calories}}%</div>
+                    </div>
+                    <p style="position: relative; left:520px; bottom:15px">{{gcal}} cals/{{tcal}} cals</p>
+                </div>
+
+                
+            </div>
+
+        
+            
+    
+
+{% endblock content %}

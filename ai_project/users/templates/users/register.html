@@ -1,0 +1,23 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+        <br><br><br><br><br>
+        <form action="/intermediate/" method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4" style="font-size: 27px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color:rgb(22, 159, 168)">Register Today</legend>
+                <br>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group" style="">
+                <button class="btn btn-outline-info btn-lg login" style="">Continue</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+            </small>
+        </div>    
+    </div>      
+{% endblock content %}

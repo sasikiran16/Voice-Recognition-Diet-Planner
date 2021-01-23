@@ -1,0 +1,650 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://themetechmount.com/html/nutricare/index.html -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="HTML5 Template">
+    <meta name="description" content="Nutricare – Nutrition Health &amp; Diet Consultancy HTML Template">
+    <meta name="author" content="https://www.themetechmount.com/">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Fitness Buddy – Nutrition Health &amp; Diet Consultancy</title>
+
+    <!-- favicon icon -->
+    <link rel="shortcut icon" href="http://themetechmount.com/html/nutricare/images/favicon.png">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="{% static 'users/bootstrap.min.css' %}">
+
+    <!-- animate -->
+    <link rel="stylesheet" type="text/css" href="{% static 'users/animate.css' %}">
+
+    <!-- owl-carousel -->
+    <link rel="stylesheet" type="text/css" href="{% static 'users/owl.carousel.css' %}">
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" type="text/css" href="{% static 'users/font-awesome.css' %}">
+
+    <!-- themify -->
+    <link rel="stylesheet" type="text/css" href="{% static 'users/themify-icons.css' %}">
+
+    <!-- flaticon -->
+    <link rel="stylesheet" type="text/css" href="{% static 'users/flaticon.css' %}">
+
+    <!-- REVOLUTION LAYERS STYLES -->
+
+    <link rel="stylesheet" type="text/css" href="{% static 'users/layers.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'users/settings.css' %}">
+
+    <!-- prettyphoto -->
+    <link rel="stylesheet" type="text/css" href="{% static 'users/prettyPhoto.css' %}">
+
+    <!-- shortcodes -->
+    <link rel="stylesheet" type="text/css" href="{% static 'users/shortcodes.css' %}">
+
+    <!-- main -->
+    <link rel="stylesheet" type="text/css" href="{% static 'users/main.css' %}">
+
+    <!-- responsive -->
+    <link rel="stylesheet" type="text/css" href="{% static 'users/responsive.css' %}">
+
+</head>
+
+
+<body>
+    <!--page start-->
+    <div class="page">
+
+        <!-- preloader start -->
+        <div id="preloader" style="display: none;">
+            <div id="status" style="display: none;">&nbsp;</div>
+        </div>
+        <!-- preloader end -->
+
+
+        <!--header start-->
+        <header id="masthead" class="header ttm-header-style-stackcenter">
+            <!-- ttm-topbar-wrapper -->
+
+            <!-- ttm-header-wrap -->
+            <div class="ttm-header-wrap">
+                <div>
+
+                    <ul class="nav navbar-nav navbar-right" style="display:inline; position:relative; right:40px">
+                        <li><a href="{% url 'intermediate' %}" style="color: rgb(5, 138, 148);"><span
+                                    class="glyphicon glyphicon-user"></span> Register</a>
+                        </li>
+                        <li><a href="{% url 'login' %}" style="color: rgb(5, 138, 148);"><span
+                                    class="glyphicon glyphicon-log-in"></span> Login</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="container" style="align-items: center; text-align:center;">
+                    <div class="row" style="align-items: center;">
+                        <!-- <img src="{% static 'users/logo_venky.png' %}" style="height:20%; width:20%; position:relative; top:100px; left:100px">  -->
+                        <div class="col-lg-6" style="height: ;">
+                            <img src="{% static 'users/logo_venky.png' %}"
+                                style="height:35%; width:35%; position:relative; top:17px; right:40px">
+                        </div>
+                        <div class="col-lg-12" style="height: 20px;">
+                            <!-- site-branding -->
+                            <h1
+                                style="word-spacing: 20px; font-weight: 550; font-size: 70px; color: rgb(164, 207, 9);  left:50px; position:relative; bottom:50px; font-family:;">
+                                Fitness Buddy</h1>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-lg-12">
+                            <!-- ttm-stickable-header-w -->
+
+                            <div id="ttm-stickable-header-w" class="ttm-stickable-header-w ttm-bgcolor-white clearfix">
+                                <div id="site-header-menu" class="site-header-menu">
+                                    <div class="site-header-menu-inner ttm-stickable-header visible-title fixed-header">
+
+                                        <div class="container">
+                                            <!--site-navigation -->
+                                            <div id="site-navigation" class="site-navigation">
+
+                                                <ul class="nav nav-tabs nav-justified">
+                                                    <li class="nav-item"><a href="{% url 'blog-home' %}">Home</a>
+                                                    </li>
+                                                    <li class="nav-item"><a href="{% url 'blog-about' %}">About
+                                                            Us</a></li>
+                                                    <li class="nav-item"><a href="{% url 'blog-services' %}"
+                                                            style="background-color; color:rgb(144, 182, 7); font-weight:500">Services</a>
+                                                    </li>
+                                                    <li class="nav-item"><a
+                                                            href="{% url 'blog-test' %}">Testimonials</a>
+                                                    </li>
+                                                    <li class="nav-item"><a href="{% url 'blog-blog' %}">Blog</a>
+                                                    </li>
+
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- site-navigation end-->
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div><!-- ttm-stickable-header-w end-->
+    </div>
+    </div>
+    </div>
+    <!--ttm-header-wrap end -->
+    </header>
+    <!--header end-->
+    <!-- working-section -->
+    <section class="ttm-row working-section ttm-bgcolor-grey clearfix">
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- section title -->
+                    <div class="section-title text-center clearfix">
+                        <div class="title-header">
+                            <h5>What We Offers</h5>
+                            <h2 class="title">How It Works?</h2>
+                        </div>
+                        <div class="title-desc">If you’re looking for a fast-paced, collaborative environment You’ll
+                            enjoy an innovative &amp; results-oriented culture driven by the facts.</div>
+                    </div><!-- section title end -->
+                </div>
+            </div>
+            <!-- row -->
+            <div class="row">
+                <div class="blog-slide owl-carousel owl-theme owl-loaded" data-item="3" data-nav="false"
+                    data-dots="false" data-auto="true">
+                    <!-- featured-imagebox -->
+                    <!-- featured-imagebox end-->
+                    <!-- featured-imagebox -->
+                    <!-- featured-imagebox end-->
+                    <!-- featured-imagebox -->
+                    <!-- featured-imagebox end-->
+                    <!-- featured-imagebox -->
+                    <!-- featured-imagebox end-->
+                    <!-- featured-imagebox -->
+                    <!-- featured-imagebox end-->
+                    <!-- featured-imagebox -->
+                    <!-- featured-imagebox end-->
+
+                    <div class="owl-item cloned" style="width: 390px; margin-right: 0px;">
+                        <div class="featured-imagebox featured-imagebox-service ttm-box-view-top-image">
+                            <div class="featured-thumbnail">
+                                <img class="img-fluid" src="{% static 'users/08.jpg' %}" alt="">
+                            </div>
+                            <div class="ttm-box-bottom-content">
+                                <div class="featured-icon">
+                                    <div
+                                        class="ttm-icon ttm-icon_element-fill ttm-icon_element-background-color-skincolor ttm-icon_element-size-md ttm-icon_element-style-rounded">
+                                        <i class="flaticon flaticon-meditation"></i>
+                                    </div>
+                                </div>
+                                <div class="featured-title featured-title">
+                                    <h5><a href="http://themetechmount.com/html/nutricare/individual-coaching.html"
+                                            tabindex="-1">Individual Coaching</a></h5>
+                                </div>
+                                <div class="featured-desc">
+                                    <p>We provide air conditioning service, repair maintenance support 24/7,
+                                        delivered by qualified service engineers.</p>
+                                    <a class="ttm-btn ttm-btn-size-sm ttm-btn-color-black btn-inline ttm-btn-underline pt-3"
+                                        href="http://themetechmount.com/html/nutricare/individual-coaching.html">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="owl-item cloned" style="width: 390px; margin-right: 0px;">
+                        <div class="featured-imagebox featured-imagebox-service ttm-box-view-top-image">
+                            <div class="featured-thumbnail">
+                                <img class="img-fluid" src="{% static 'users/02.jpg'%}" alt="">
+                            </div>
+                            <div class="ttm-box-bottom-content">
+                                <div class="featured-icon">
+                                    <div
+                                        class="ttm-icon ttm-icon_element-fill ttm-icon_element-background-color-skincolor ttm-icon_element-size-md ttm-icon_element-style-rounded">
+                                        <i class="flaticon flaticon-nutritionist-1"></i>
+                                    </div>
+                                </div>
+                                <div class="featured-title featured-title">
+                                    <h5><a href="http://themetechmount.com/html/nutricare/child-nutrition.html"
+                                            tabindex="-1">Child Nutrition</a></h5>
+                                </div>
+                                <div class="featured-desc">
+                                    <p>Our main goal for the child nutrition is to provide a healthy and
+                                        nutritious breakfast to child for better health.</p>
+                                    <a class="ttm-btn ttm-btn-size-sm ttm-btn-color-black btn-inline ttm-btn-underline pt-3"
+                                        href="http://themetechmount.com/html/nutricare/child-nutrition.html">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="owl-item active" style="width: 390px; margin-right: 0px;">
+                        <div class="featured-imagebox featured-imagebox-service ttm-box-view-top-image">
+                            <div class="featured-thumbnail">
+                                <img class="img-fluid" src="{% static 'users/05.jpg' %}" alt="">
+                            </div>
+                            <div class="ttm-box-bottom-content">
+                                <div class="featured-icon">
+                                    <div
+                                        class="ttm-icon ttm-icon_element-fill ttm-icon_element-background-color-skincolor ttm-icon_element-size-md ttm-icon_element-style-rounded">
+                                        <i class="flaticon flaticon-bicycle"></i>
+                                    </div>
+                                </div>
+                                <div class="featured-title featured-title">
+                                    <h5><a href="http://themetechmount.com/html/nutricare/sports-nutritionist.html"
+                                            tabindex="-1">Sports Nutritionist</a></h5>
+                                </div>
+                                <div class="featured-desc">
+                                    <p>We are specializing in sports nutrition. Our sports nutrition team
+                                        love the benefits of exercise brings. </p>
+                                    <a class="ttm-btn ttm-btn-size-sm ttm-btn-color-black btn-inline ttm-btn-underline pt-3"
+                                        href="http://themetechmount.com/html/nutricare/sports-nutritionist.html">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="owl-item active" style="width: 390px; margin-right: 0px;">
+                        <div class="featured-imagebox featured-imagebox-service ttm-box-view-top-image">
+                            <div class="featured-thumbnail">
+                                <img class="img-fluid" src="{% static 'users/06.jpg' %}" alt="">
+                            </div>
+                            <div class="ttm-box-bottom-content">
+                                <div class="featured-icon">
+                                    <div
+                                        class="ttm-icon ttm-icon_element-fill ttm-icon_element-background-color-skincolor ttm-icon_element-size-md ttm-icon_element-style-rounded">
+                                        <i class="flaticon flaticon-fruits"></i>
+                                    </div>
+                                </div>
+                                <div class="featured-title featured-title">
+                                    <h5><a href="http://themetechmount.com/html/nutricare/personalized-nutrition.html"
+                                            tabindex="-1">Personalized Nutrition</a></h5>
+                                </div>
+                                <div class="featured-desc">
+                                    <p>Our personalized nutrition foods are right for you &amp; supplements
+                                        should be taking with diet plan.</p>
+                                    <a class="ttm-btn ttm-btn-size-sm ttm-btn-color-black btn-inline ttm-btn-underline pt-3"
+                                        href="http://themetechmount.com/html/nutricare/personalized-nutrition.html">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="owl-item active" style="width: 390px; margin-right: 0px;">
+                        <div class="featured-imagebox featured-imagebox-service ttm-box-view-top-image">
+                            <div class="featured-thumbnail">
+                                <img class="img-fluid" src="{% static 'users/07.jpg' %}" alt="">
+                            </div>
+                            <div class="ttm-box-bottom-content">
+                                <div class="featured-icon">
+                                    <div
+                                        class="ttm-icon ttm-icon_element-fill ttm-icon_element-background-color-skincolor ttm-icon_element-size-md ttm-icon_element-style-rounded">
+                                        <i class="flaticon flaticon-reduce"></i>
+                                    </div>
+                                </div>
+                                <div class="featured-title featured-title">
+                                    <h5><a href="http://themetechmount.com/html/nutricare/weight-loss-programs.html"
+                                            tabindex="-1">Weight Loss Programs</a></h5>
+                                </div>
+                                <div class="featured-desc">
+                                    <p>Weight loss process doesn’t mean strive to body but make the eating
+                                        process healthy and fully exotic.</p>
+                                    <a class="ttm-btn ttm-btn-size-sm ttm-btn-color-black btn-inline ttm-btn-underline pt-3"
+                                        href="http://themetechmount.com/html/nutricare/weight-loss-programs.html">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    
+                    
+            </div>
+            <div class="owl-controls">
+                <div class="owl-nav">
+                    <div class="owl-prev" style="display: none;">prev</div>
+                    <div class="owl-next" style="display: none;">next</div>
+                </div>
+                <div class="owl-dots" style="display: none;"></div>
+            </div>
+        </div>
+        </div><!-- row end -->
+        </div>
+    </section>
+    <!-- working-section end -->
+
+    <!-- services-section -->
+    <section
+        class="ttm-row services-section bg-layer bg-layer-equal-height break-991-colum res-991-mt-0  mt_60 clearfix">
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                   
+                    <!-- col-img-bg-img-two end-->
+                    <img src="{% static 'users/col-bgimage-2.jpg' %}" class="" style="position:relative; right:120px" alt="bg-image">
+                </div>
+
+                <div class="col-lg-6 col-md-12">
+                    <!-- col-bg-img-three -->
+                    <div
+                        class="col-bg-img-three ttm-bg ttm-col-bgimage-yes  ttm-right-span ttm-bgcolor-skincolor spacing-5 z-5">
+                        <div class="ttm-col-wrapper-bg-layer ttm-bg-layer">
+                            <div class="ttm-bg-layer-inner"></div>
+                        </div><!-- col-bg-img-three -->
+                        <div class="layer-content" style="position: relative; left:50px">
+                            <!-- section title -->
+                            <div class="section-title clearfix">
+                                <div class="title-header">
+                                    <h5>WHAT WE DO</h5>
+                                    <h2 class="title">Why Choose Us</h2>
+                                </div>
+                                <div class="title-desc">We handpick the best coaches and health experts from across
+                                    the country to make sure you get the most personalized health person.</div>
+                            </div><!-- section title end -->
+                            <!--featured-icon-box-->
+                            <div class="featured-icon-box style3 left-icon icon-align-top">
+                                <div class="featured-icon">
+                                    <div
+                                        class="ttm-icon ttm-icon_element-border ttm-icon_element-color-white ttm-icon_element-size-md ttm-icon_element-style-rounded">
+                                        <i class="flaticon flaticon-care-1"></i>
+                                    </div>
+                                </div>
+                                <div class="featured-content">
+                                    <div class="featured-title">
+                                        <h5>Nutrition Strategies</h5>
+                                    </div>
+                                    <div class="featured-desc">
+                                        <p>We use 5 different ways to rev up your metabolism so you burn calories.
+                                            Our main aim to improve healthy eating information &amp; inner strength
+                                        </p>
+                                    </div>
+                                </div>
+                            </div><!-- featured-icon-box end-->
+                            <div class="separator">
+                                <div class="sep-line mt_5 mb-35"></div>
+                            </div>
+                            <!--featured-icon-box-->
+                            <div class="featured-icon-box style3 left-icon icon-align-top">
+                                <div class="featured-icon">
+                                    <div
+                                        class="ttm-icon ttm-icon_element-border ttm-icon_element-color-white ttm-icon_element-size-md ttm-icon_element-style-rounded">
+                                        <i class="flaticon flaticon-healthy-lifestyle-logo"></i>
+                                    </div>
+                                </div>
+                                <div class="featured-content">
+                                    <div class="featured-title">
+                                        <h5>Support &amp; Motivation</h5>
+                                    </div>
+                                    <div class="featured-desc">
+                                        <p>Our motivational strategies primarily involve helping clients. Our quotes
+                                            on perseverance and success to keep our client motivated.</p>
+                                    </div>
+                                </div>
+                            </div><!-- featured-icon-box end-->
+                        </div>
+                    </div><!-- about-content end-->
+                </div>
+            </div><!-- row end -->
+        </div>
+    </section>
+    <!--services-section end-->
+
+    <!--footer start-->
+    <footer class="footer widget-footer ttm-bgcolor-black clearfix">
+        <div class="first-footer">
+            <div class="container">
+                <div class="row align-center">
+                    <div class="col-lg-8 col-xs-12 widget-area">
+                        <div class="featured-icon-box left-icon">
+                            <div class="featured-icon">
+                                <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-xs">
+                                    <i class="fa fa-clock-o"></i>
+                                </div>
+                            </div>
+                            <div class="featured-content">
+                                <div class="featured-title">
+                                    <h5>Opening Hours:</h5>
+                                    <h6>Monday: 8:00 AM - 20:00 PM &nbsp;&nbsp; | &nbsp;&nbsp; Saturday: 10:00AM -
+                                        2:00PM</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xs-12 widget-area text-right">
+                        <div class="download-button">
+                            <a href="http://themetechmount.com/html/nutricare/index.html#"><img
+                                    src="{% static 'users/app-button-01.png' %}" alt="app-button"></a>
+                            <a href="http://themetechmount.com/html/nutricare/index.html#"><img
+                                    src="{% static 'users/app-button-02.png' %}" alt="app-button"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="second-footer ttm-textcolor-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 widget-area">
+                        <div class="widget clearfix">
+                            <div class="footer-logo">
+                                <div class="row" style="align-items: center;">
+                                    <!-- <img src="{% static 'users/venky_logo.jpeg' %}" style="height:20%; width:20%; position:relative; top:100px; left:100px">  -->
+                                    <div class="col-lg-6" style="height: ;">
+                                        <!-- <img src="{% static 'users/logo_venky.png' %}" -->
+                                        <!-- style="height:35%; width:35%; position:relative; top:17px; right:40px"> -->
+                                    </div>
+                                    <!-- <div class="col-lg-12" style="height: 20px;"> -->
+                                    <!-- site-branding -->
+                                    <!-- <h1
+                      style="word-spacing: 20px; font-weight: 550; font-size: 70px; color: rgb(164, 207, 9);  left:50px; position:relative; bottom:50px; font-family:;">
+                      Fitness Buddy</h1>
+      
+      
+                  </div> -->
+
+
+                                </div>
+                            </div>
+                            <p>We have been the most trusted Health care Nutrition for 25 years. We're proud of our rich
+                                history for nutritionists services.</p>
+                            <div class="separator pt-5">
+                                <div class="sep-line mb-30"></div>
+                            </div>
+                            <ul class="widget-contact">
+                                <li><a href="mailto:info@example.com" target="_blank"><i
+                                            class="fa fa-envelope-o"></i>info@example.com</a></li>
+                                <li><i class="fa fa-phone"></i>(+01) 123 456 7890</li>
+                            </ul>
+                            <div class="social-icons social-hover">
+                                <ul class="list-inline">
+                                    <li class="social-facebook"><a class="tooltip-top" target="_blank"
+                                            href="http://themetechmount.com/html/nutricare/index.html#"
+                                            data-tooltip="Facebook"><i class="fa fa-facebook"
+                                                aria-hidden="true"></i></a></li>
+                                    <li class="social-twitter"><a class="tooltip-top" target="_blank"
+                                            href="http://themetechmount.com/html/nutricare/index.html#"
+                                            data-tooltip="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li class="social-gplus"><a class=" tooltip-top" target="_blank"
+                                            href="http://themetechmount.com/html/nutricare/index.html#"
+                                            data-tooltip="Flickr"><i class="fa fa-flickr" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li class="social-linkedin"><a class=" tooltip-top" target="_blank"
+                                            href="http://themetechmount.com/html/nutricare/index.html"
+                                            data-tooltip="LinkedIn"><i class="fa fa-linkedin"
+                                                aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 widget-area">
+                        <div class="widget widget_nav_menu clearfix">
+                            <h3 class="widget-title">Quick Links</h3>
+                            <ul id="menu-footer-services">
+                                <li><a href="http://themetechmount.com/html/nutricare/index.html#">Personalized
+                                        Nutrition</a></li>
+                                <li><a href="http://themetechmount.com/html/nutricare/index.html#">Wellness Programs</a>
+                                </li>
+                                <li><a href="http://themetechmount.com/html/nutricare/index.html#">Individual
+                                        Coaching</a></li>
+                                <li><a href="http://themetechmount.com/html/nutricare/index.html#">Sports Nutritionist
+                                        Diet</a></li>
+                                <li><a href="http://themetechmount.com/html/nutricare/index.html#">Child Nutritionist
+                                        Plan</a></li>
+                                <li><a href="http://themetechmount.com/html/nutricare/index.html#">Make Appointments</a>
+                                </li>
+                                <li><a href="http://themetechmount.com/html/nutricare/index.html#">Our Pricing Plan</a>
+                                </li>
+                                <li><a href="http://themetechmount.com/html/nutricare/index.html#">Online Nutrition
+                                        Services</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 widget-area">
+                        <div class="widget widget_text clearfix">
+                            <h3 class="widget-title">Recent Posts</h3>
+                            <ul class="widget-post ttm-recent-post-list">
+                                <li>
+                                    <a href="http://themetechmount.com/html/nutricare/single-blog.html"><img
+                                            src="{% static 'users/post-1.jpg' %}" alt="post-img"></a>
+                                    <span class="post-date"><i class="fa fa-calendar"></i>20 April,2018</span>
+                                    <a href="http://themetechmount.com/html/nutricare/single-blog.html"
+                                        class="clearfix">How Much Do Eat
+                                        You Really Need Day?</a>
+                                </li>
+                                <li>
+                                    <a href="http://themetechmount.com/html/nutricare/single-blog.html"><img
+                                            src="{% static 'users/post-2.jpg' %}" alt="post-img"></a>
+                                    <span class="post-date"><i class="fa fa-calendar"></i>01 August, 2018</span>
+                                    <a href="http://themetechmount.com/html/nutricare/single-blog.html"
+                                        class="clearfix">7 Simple &amp;
+                                        Healthy Gluten Free Cookie</a>
+                                </li>
+                                <li>
+                                    <a href="http://themetechmount.com/html/nutricare/single-blog.html"><img
+                                            src="{% static 'users/post-3.jpg' %}" alt="post-img"></a>
+                                    <span class="post-date"><i class="fa fa-calendar"></i>13 March, 2018</span>
+                                    <a href="http://themetechmount.com/html/nutricare/single-blog.html"
+                                        class="clearfix">Tips For Staying
+                                        Healthy On Vacations</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 widget-area">
+                        <div class="widget clearfix">
+                            <div class="ttm-newsletter-box">
+                                <h3 class="widget-title">Newsletter</h3>
+                                <p>Sign up to get exclusive offers from our favorite brands and to be well up in the
+                                    news.</p>
+                                <form class="mc4wp-form mc4wp-form-24" method="post" data-id="24"
+                                    data-name="Newsletter Form">
+                                    <div class="mc4wp-form-fields">
+                                        <div class="mailchimp-inputbox">
+                                            <input type="email" name="EMAIL" placeholder="Your email address.."
+                                                required="">
+                                            <input type="submit" value="Subscribe">
+                                        </div>
+                                    </div>
+                                    <div class="mc4wp-response"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-footer-text ttm-textcolor-white">
+            <div class="container">
+                <div class="row copyright">
+                    <div class="col-md-8 ttm-footer2-left">
+                        <span>Copyright © 2020&nbsp;<a
+                                href="http://themetechmount.com/html/nutricare/index.html#">Fitness
+                                Buddy</a>. All rights
+                            reserved.</span>
+                    </div>
+                    <div class="col-md-4 ttm-footer2-right">
+                        <ul id="menu-footer-menu" class="footer-nav-menu">
+                            <li><a href="http://themetechmount.com/html/nutricare/index.html#">Privacy Policy</a></li>
+                            <li><a href="http://themetechmount.com/html/nutricare/index.html#">Contact</a></li>
+                            <li><a href="http://themetechmount.com/html/nutricare/index.html#">Supplier</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--footer end-->
+
+    <!--back-to-top start-->
+    <a id="totop" href="http://themetechmount.com/html/nutricare/index.html#top" class="top-visible"
+        style="display: block;">
+        <i class="fa fa-angle-up"></i>
+    </a>
+    <!--back-to-top end-->
+
+    </div><!-- page end -->
+
+    <!-- Javascript -->
+
+    <script src="{% static 'users/jquery.min.js.download' %}"></script>
+    <script src="{% static 'users/tether.min.js.download' %}"></script>
+    <script src="{% static 'users/bootstrap.min.js.download' %}"></script>
+    <script src="{% static 'users/jquery.easing.js.download' %}"></script>
+    <script src="{% static 'users/jquery-waypoints.js.download' %}"></script>
+    <script src="{% static 'users/jquery-validate.js.download' %}"></script>
+    <script src="{% static 'users/owl.carousel.js.download' %}"></script>
+    <script src="{% static 'users/jquery.prettyPhoto.js.download' %}"></script>
+    <script src="{% static 'users/numinate.min.js.download' %}"></script>
+    <script src="{% static 'users/main.js.download' %}"></script>
+
+    <!-- Revolution Slider -->
+    <script src="{% static 'users/jquery.themepunch.tools.min.js.download' %}"></script>
+    <script src="{% static 'users/jquery.themepunch.revolution.min.js.download' %}"></script>
+    <script src="{% static 'users/slider.js.download' %}"></script>
+
+    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
+
+    <script src="{% static 'users/revolution.extension.actions.min.js.download' %}"></script>
+    <script src="{% static 'users/revolution.extension.carousel.min.js.download' %}"></script>
+    <script src="{% static 'users/revolution.extension.kenburn.min.js.download' %}"></script>
+    <script src="{% static 'users/revolution.extension.layeranimation.min.js.download' %}"></script>
+    <script src="{% static 'users/revolution.extension.migration.min.js.download' %}"></script>
+    <script src="{% static 'users/revolution.extension.navigation.min.js.download' %}"></script>
+    <script src="{% static 'users/revolution.extension.parallax.min.js.download'%}"></script>
+    <script src="{% static 'users/revolution.extension.slideanims.min.js.download' %}"></script>
+
+    <!-- Javascript end-->
+
+
+</body>
+
+</html>

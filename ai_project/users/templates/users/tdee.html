@@ -1,0 +1,48 @@
+{% extends "blog/base1.html" %}
+{% block content %}
+
+<form action="/" method="POST">
+    {% csrf_token %}
+    <center>
+        <tabel align="center" <tr>
+
+            {% if bfp < 0 %}
+            <a>Please recheck the values entered</a>
+
+            {% else %}
+            <tr>
+                <th width="150">
+                    <label for="name">Your body fat percentage is: {{bfp}}</label>
+                    <!-- <input type="number" placeholder="Height" name="Height" required><br> -->
+                </th>
+            </tr><br><br>
+
+
+            <tr>
+                <th width="150">
+                    <label for="name">Your TDEE is: {{tdee}}</label>
+                    <!-- <input type="number" placeholder="Height" name="Height" required><br> -->
+                </th>
+
+            </tr><br><br>
+            <tr>
+                <th width="150">
+                    <label for="name">Your total daily consumption is :{{cons}}</label>
+                    <!-- <input type="number" placeholder="Weight" name="Weight" required><br> -->
+                </th>
+            </tr><br><br>
+            
+            
+            {% endif %} 
+            <h3 align="center">
+            <font style="color:blue;" face="chiller">
+                {{ message }}
+
+            </font>
+            </h3> 
+
+        </tabel>
+    </center>
+</form>
+
+{% endblock content %}

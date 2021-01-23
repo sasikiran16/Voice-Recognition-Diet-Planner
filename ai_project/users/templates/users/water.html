@@ -1,0 +1,89 @@
+{% extends "blog/base1.html" %}
+{% block content %}
+{% load static %}
+<!-- <body> -->
+    <br><br><br><br><br><br>
+    <form action="/water/" method="POST" id="wat">
+        {% csrf_token %}
+        <input type="hidden" name='water' id='water' value="">
+    </form>
+{% if flag == 1 %}
+<div class="container-fluid"
+    style="background:rgb(19, 22, 22); position:relative; height:60px; align-items:center; opacity:0.8">
+    <!-- <div class="tp-caption main-font tp-resizeme" style="position:relative; text-align:center"> -->
+    <b style="color:rgb(223, 205, 205); text-align:center; font-size:30px; position:relative; top:20px; left:600px">
+        WATER INTAKE</b>
+</div>
+    <div class="container-fluid" style="margin-bottom:100px; background:rgb(255, 255, 255); height:1000px;">
+    <label style="position:relative; width:10000px; left:870px; font-size:30px; top:40px"></label><br><br>
+    <img src="{% static 'users/water.jpg' %}" style="opacity:; position:relative; bottom:50px; width:600px;height:500px">
+    <div class="row" style="column-gap: 80px; position:absolute">
+        <div class="progress" style="width: 700px; height:20px; position:relative; bottom:400px; left:570px">
+            <div class="progress-bar bg-warning " id ='prog' role="progressbar" style="width:{{per}}%" aria-valuenow="0"
+                aria-valuemin="0" aria-valuemax="8">{{per}} %</div>
+        </div>
+        <p style="position: relative; bottom:370px; left:140px">{{amt}}/8 Glasses</p>
+    </div>
+        
+    <tr>
+        <th width="150">
+            
+            <input type="number" placeholder="Water intake (glasses)" name="goal_weight" value={{amt}} onchange="change1(value)" style="width: 400px; position:relative; left:200px"><br>
+        </th>
+    </tr>
+    <!-- <div class="range-wrap" style="width: 600px; position:relative; left:700px; bottom:400px" >
+        <div class="range-value" id="rangeV"  ></div>
+        <input id="range" type="range" min="0" max="2000" value={{value}} step="1" style="background: linear-gradient(to right, #82CFD0 0%, #82CFD0 50%, #fff 50%, #fff 100%)" on>
+      </div>
+      
+    </div> -->
+    <script>
+    function change1($i) {
+        document.getElementById('water').value = $i;
+        document.getElementById('wat').submit();
+
+    }
+    
+</script>
+</div>
+
+{% else %}
+
+<div class="container-fluid" style="margin-bottom:100px; background:rgb(255, 255, 255); height:1000px;">
+    <label style="position:relative; width:10000px; left:870px; font-size:30px; top:40px">WATER INTAKE</label><br><br>
+    <img src="{% static 'users/water.jpg' %}" style="opacity:; position:relative; bottom:50px; width:600px;height:500px">
+    <div class="row" style="column-gap: 80px; position:absolute">
+        <div class="progress" style="width: 700px; height:20px; position:relative; bottom:400px; left:570px">
+            <div class="progress-bar bg-warning " id ='prog' role="progressbar" style="" aria-valuenow="0"
+                aria-valuemin="0" aria-valuemax="8">0 Glasses</div>
+        </div>
+        <p style="position: relative; bottom:370px; left:140px">0/8</p>
+    </div>
+        
+    <tr>
+        <th width="150">
+            
+            <input type="number" placeholder="Water intake (glasses)" name="goal_weight"  onchange="change2(value)" style="width: 400px; position:relative; left:200px"><br>
+        </th>
+    </tr>
+    <!-- <div class="range-wrap" style="width: 600px; position:relative; left:700px; bottom:400px" >
+        <div class="range-value" id="rangeV"  ></div>
+        <input id="range" type="range" min="0" max="2000" value={{value}} step="1" style="background: linear-gradient(to right, #82CFD0 0%, #82CFD0 50%, #fff 50%, #fff 100%)" on>
+      </div>
+      
+    </div> -->
+    <script>
+    function change2($i) {
+        
+        document.getElementById('water').value = $i
+        document.getElementById('wat').submit()
+
+    }
+    
+</script>
+</div>
+
+{% endif %}     
+    
+
+{% endblock content %}

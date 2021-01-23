@@ -1,0 +1,53 @@
+{% extends "blog/base1.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br><br><br><br><br><br>
+    <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <div class="media-body">
+          <h2 class="account-heading">{{ user.username }}</h2>
+          <p class="text-secondary">{{ user.email }}</p>
+        </div>
+      </div>
+
+      <form action="/" method="POST">
+        {% csrf_token %}
+        <center>
+            <tabel align="center" <tr>
+    
+                {% if bfp < 0 %}
+                <a>Please recheck the values entered</a>
+    
+                {% else %}
+                <tr>
+                    <th width="150">
+                        <label for="name">Your body fat percentage is: {{bfp}}%</label>
+                        <!-- <input type="number" placeholder="Height" name="Height" required><br> -->
+                    </th>
+                </tr><br><br>
+    
+                
+                <tr>
+                    <th width="150">
+                        <label for="name">Your TDEE is: {{tdee}} cals</label>
+                        <!-- <input type="number" placeholder="Height" name="Height" required><br> -->
+                    </th>
+                </tr><br><br>
+    
+                <tr>
+                    <th width="150">
+                        <label for="name">Your total daily consumption is: {{cons}} cals</label>
+                        <!-- <input type="number" placeholder="Weight" name="Weight" required><br> -->
+                    </th>
+                </tr><br><br>
+                {% endif %}
+                
+            
+    
+            </tabel>
+        </center>
+    </form>
+      <!-- FORM HERE -->
+    </div>
+{% endblock content %}

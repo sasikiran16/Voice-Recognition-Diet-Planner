@@ -1,0 +1,218 @@
+{% extends "blog/base1.html" %}
+{% block content %}
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    .fa {
+        font-size: 50px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .fa:hover {
+        color: darkblue;
+    }
+</style>
+
+<form action='/{{rec}}/' method="POST" id="send">
+    {% csrf_token %}
+    <input type="hidden" value="1" name="flag" id='flag'>
+    <input type="hidden" name='like' id='like' value="">
+    <input type="hidden" name='dislike' id='dislike' value="">
+</form>
+
+<!-- <body> -->
+<br><br><br><br><br><br>
+<div class="container-fluid"
+    style="background:rgb(19, 22, 22); position:relative; height:60px; align-items:center; opacity:0.8">
+    <!-- <div class="tp-caption main-font tp-resizeme" style="position:relative; text-align:center"> -->
+    <b style="color:rgb(223, 205, 205); text-align:center; font-size:30px; position:relative; top:20px; left:700px">
+        {{cum.name}}</b>
+</div>
+<div class="container-fluid" style="margin-bottom:100px; background:rgb(255, 255, 255); height:100%">
+    <label style="position:relative; width:10000px; text-align:center; font-size:20px"></label><br><br>
+    <div class="container" style="">
+        <div class="row" style="column-gap: 80px;">
+            <div class="column">
+                <label>Carbohydrate</label><br>
+                <div class="progress" style="width: 300px; height:20px">
+                    <div class="progress-bar bg-info " role="progressbar" style="width: {{cum.carbs}}%;"
+                        aria-valuenow="{{cum.carbs}}" aria-valuemin="0" aria-valuemax="100">{{cum.carbs}}%</div>
+                </div>
+                <p style="position: relative; left:110px; bottom:15px">{{cum.gcarb}}g/{{cum.tcarb}}g</p>
+            </div>
+            <div class="column">
+                <label>Protein</label><br>
+                <div class="progress" style="width: 300px; height:20px">
+                    <div class="progress-bar bg-success " role="progressbar" style="width: {{cum.prot}}%;"
+                        aria-valuenow="{{cum.prot}}" aria-valuemin="0" aria-valuemax="100">{{cum.prot}}%</div>
+                </div>
+                <p style="position: relative; left:100px; bottom:15px">{{cum.gpro}}g/{{cum.tpro}}g</p>
+            </div>
+            <div class="column">
+                <label>Fats</label><br>
+                <div class="progress" style="width: 300px; height:20px">
+                    <div class="progress-bar bg-danger " role="progressbar" style="width: {{cum.fat}}%;"
+                        aria-valuenow="{{cum.fat}}" aria-valuemin="0" aria-valuemax="100">{{cum.fat}}%</div>
+                </div>
+                <p style="position: relative; left:130px; bottom:15px">{{cum.gfat}}g/{{cum.tfat}}g</p>
+            </div>
+        </div>
+        <label style="position:relative; left:535px">Calories</label><br>
+        <div class="row" style="column-gap: 80px; position:absolute">
+            
+            <div class="progress" style="width: 1060px; height:20px">
+                <div class="progress-bar bg-warning " role="progressbar" style="width: {{cum.calories}}%; "
+                    aria-valuenow="{{cum.calories}}" aria-valuemin="0" aria-valuemax="100">{{cum.calories}}%</div>
+            </div>
+            <p style="position: relative; left:520px; bottom:15px">{{cum.gcal}} cals/{{cum.tcal}} cals</p>
+        </div>
+
+
+    </div><br><br>
+
+    <!-- <p>{{user_name}}</p> -->
+    <!-- <div class="wrapper" style="position:relative; text-align: center;"> -->
+    <input type="hidden" name="record" value='Breakfast'><br>
+    <!-- <button type="button" onclick="sub()" style="width: 10%; height: 200%; font-size:15px;" class="btn btn-lg btn-info"
+                name="breakfast">Add Item</button> -->
+    <!-- </div> -->
+    <form action='/record/' method="post" id='add'>
+        {% csrf_token %}
+        <div class="wrapper" style="position:relative; text-align: center;">
+            <div class="form-group">
+                <input type="hidden" name='success' value='true'>
+                <input type="hidden" name='status' value='add'>
+                <input type="hidden" name='record' value={{rec}}>
+                <button class="btn btn-lg btn-info" style="width: 10%; height: 200%; font-size:15px;" type="submit"
+                    onclick="add()">Add Item</button>
+            </div>
+        </div>
+        <script>
+            function add() {
+                document.getElementById('add').submit();
+            }
+        </script>
+    </form>
+    <div class="container" style="margin-bottom:100px;">
+        <br>
+
+        {% for key, val in food_dict.items %}
+        <div class="container" style="">
+            <form>
+                {% csrf_token %}
+                <input type="hidden" name="record" value='breakfast'>
+                <input type="hidden" name='success' value='false'>
+                <span style=>{{val.food_names}}</span><br>
+                <span style=>{{val.amount}} {{val.unit}}</span>
+                <div>
+                    <b style="color:rgb(92, 172, 13)">Calories: </b><span>{{val.calories}} </span><br>
+                    <b style="color:rgb(92, 172, 13)">Carbs:</b> <span style="">{{val.carbs}}, </span> <b
+                        style="color:rgb(92, 172, 13)">Proteins:</b> <span>{{val.proteins}}, </span> <b
+                        style="color:rgb(92, 172, 13)">Fats:</b> <span>{{val.fats}} </span>
+                </div>
+            </form>
+
+            <!-- {{tab}} -->
+
+
+            <br>
+
+            <form action='/{{rec}}/' method="post" id='delete'>
+                {% csrf_token %}
+                <div class="form-group" style="">
+                    <input type="hidden" name='success' value='true'>
+                    <input type="hidden" name='status' value='delete'>
+                    <input type="hidden" name='food_name' value='food'>
+                    <!-- <p>{{ind}}</p> -->
+                    <button class="btn btn-lg btn-info" style="width: 10%; height: 200%; font-size:15px;" id={{key}}
+                        type='button' onclick="del(this)" value={{food}}>Delete
+                    </button>
+                </div>
+                <input type='hidden' id="ind" name="ind" value="">
+
+            </form>
+
+
+            <script type="text/javascript">
+                function del(abc) {
+                    var ind = abc.getAttribute('id');
+                    document.getElementById('ind').value = ind;
+                    document.getElementById('delete').submit();
+                }           
+            </script>
+        </div>
+    </div>
+
+    {% endfor %}
+
+
+</div>
+<div class="container-fluid"
+    style="background:rgb(19, 22, 22); position:relative; height:60px; align-items:center; opacity:0.8">
+    <!-- <div class="tp-caption main-font tp-resizeme" style="position:relative; text-align:center"> -->
+    <b style="color:rgb(223, 205, 205); text-align:center; font-size:30px; position:relative; top:20px; left:500px">OUR
+        RECOMMENDATIONS</b>
+</div><br><br><br><br><br><br><br><br>
+<img src="{% static 'users/people-table-food-picnic.jpg' %}" style="opacity:; position:relative; bottom:200px; width:650px; height:500px">
+
+{% for i in content %}
+<p id='refer' style="font-size: 20px; font-weight:600; position:relative; left:800px; bottom:680px; color:black">{{i}}
+</p>
+<!-- <button style="display:none;" onclick="myFunction()"> -->
+<i type="button" class="fa fa-thumbs-up" id='likes' name='likes' value={{i}} para-id='{{i}}' onclick="like(this)"
+    aria-hidden="true" onclick=""
+    style="font-size: 30px; font-weight:600; position:relative; left:1200px; bottom:725px; color:rgb(182, 49, 49); size:50px"></i>
+
+<style>
+    .fa {
+        font-size: 50px;
+        cursor: pointer;
+        user-select: none;
+    }
+</style>
+<i type="button" class="fa fa-thumbs-down" id='dislikes' name='dislikes' value={{i}} para-id='{{i}}'
+    onclick="dislike(this)" aria-hidden="true"
+    style="font-size: 30px; font-weight:600; position:relative; left:900px; left:1250px; bottom:722px; color:rgb(182, 49, 49);"></i>
+<!-- </button>   -->
+<script>
+    function dislike(xyz) {
+        var plz = xyz.getAttribute('para-id');
+        document.getElementById('dislike').value = plz;
+        document.getElementById('send').submit();
+    }
+
+    function like(xyz) {
+        var plz = xyz.getAttribute('para-id');
+        document.getElementById('like').value = plz;
+        document.getElementById('send').submit();
+    }
+    function bigImg(val) {
+        document.getElementById('help').style.color = 'dark blue'
+    }
+</script>
+{% endfor %}
+
+<div class="container-fluid"
+    style="background:rgb(19, 22, 22); position:relative; height:60px; align-items:center; opacity:0.8; bottom:600px">
+    <!-- <div class="tp-caption main-font tp-resizeme" style="position:relative; text-align:center"> -->
+    <b style="color:rgb(223, 205, 205); text-align:center; font-size:30px; position:relative; top:20px; left:560px">
+        YOU MAY ALSO LIKE</b>
+</div><br><br><br><br><br><br><br><br>
+<img src="{% static 'users/eating-out.jpg' %}"
+    style="opacity:; position:relative; bottom:803px; width:650px; left:750px">
+
+{% for i in rec_food %}
+<p style="font-size: 20px; font-weight:600; position:relative;  color:black; bottom:1150px; left:140px">{{i}}</p><br>
+{% endfor %}
+
+</div>
+
+
+<!-- </body> -->
+
+
+{% endblock content %}
