@@ -11,6 +11,6 @@ It's a Python-Django web app which takes the voice intput of food item and track
 Run the application in visual studio code using the command
 "python manage.py runserver
 
-![](<img width="960" alt="2021-01-23 (1)" src="https://user-images.githubusercontent.com/59812663/105573960-32d94500-5d87-11eb-8b72-d3c974857da5.png">)
+![](https://user-images.githubusercontent.com/59812663/105573960-32d94500-5d87-11eb-8b72-d3c974857da5.png")
 
 
