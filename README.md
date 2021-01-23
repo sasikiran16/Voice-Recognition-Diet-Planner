@@ -1,9 +1,10 @@
-# FITNESS BUDDY: A Nutrition App
-#### OBJECTIVE:
-To build a voice-based calorie estimator and diet planner which can help users reach their fitness goals.
+Voice-Recognition-Diet-Planner
+App name- Fitness buddy
 
-#### DATA DESCRIPTION:
-The dataset obtained contains 13,746 records of food items and 11 columns, namely, Food, Category, Amount, Calories, Carbs(in g), Fat(in g), Protein(in g), Meal_type, Region, Type, Categories(Healthy/Unhealthy).
+*Python-Django web application
 
-The Python Application takes in a voice input of the food and amount, tracks the number of calories and macronutrients, and recommends foods for a healthy lifestyle. 
-The user interface was developed using Django.
+It's an app which takes in voice input of food and amount, Outputs the number of macronutrients and recommends food for a balanced diet.
+
+It's a Python-Django web app which takes the voice intput of food item and tracks daily nutrition like how many calories got burned how many intake calories a person has to maintain.
+Run the application in visual studio code using the command
+"python manage.py runserver
