@@ -10,3 +10,7 @@ It's an app which takes in voice input of food and amount, Outputs the number of
 It's a Python-Django web app which takes the voice intput of food item and tracks daily nutrition like how many calories got burned how many intake calories a person has to maintain.
 Run the application in visual studio code using the command
 "python manage.py runserver
+
+![](images/2021-01-23(1).png)
+
+![](images/2021-01-23.png)
