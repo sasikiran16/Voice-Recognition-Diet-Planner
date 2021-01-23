@@ -1,5 +1,7 @@
 ##Voice-Recognition-Diet-Planner##
-##App name- Fitness buddy##
+
+
+App name- Fitness buddy
 
 *Python-Django web application
 
